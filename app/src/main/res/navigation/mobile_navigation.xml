@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="id.standherealone.yuubaca.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/home_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_save"
+        android:name="id.standherealone.yuubaca.ui.save.SaveFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/save_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_download"
+        android:name="id.standherealone.yuubaca.ui.download.DownloadFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/download_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="id.standherealone.yuubaca.ui.setting.SettingFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/setting_fragment" />
+</navigation>
