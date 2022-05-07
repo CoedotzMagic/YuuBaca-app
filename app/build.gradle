@@ -59,8 +59,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-config-ktx:21.1.0'
 
     //Retrofit & Picasso
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //Glide
