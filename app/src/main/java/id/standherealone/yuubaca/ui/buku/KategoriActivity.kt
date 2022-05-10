@@ -17,6 +17,7 @@ import id.standherealone.yuubaca.api.ApiIPS
 import id.standherealone.yuubaca.api.ApiSD
 import id.standherealone.yuubaca.api.ApiSMP
 import id.standherealone.yuubaca.api.ApiSMA
+import id.standherealone.yuubaca.databinding.ActivityRecyclerviewBinding
 
 // DO NOT REMOVE
 
@@ -24,21 +25,22 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-import kotlinx.android.synthetic.main.activity_recyclerview.*
-
 class KategoriActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityRecyclerviewBinding
     lateinit var recyclerView: RecyclerView
     lateinit var recyclerAdapter: BukuAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recyclerview)
+
+        binding = ActivityRecyclerviewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         recyclerView = findViewById(R.id.recyclerview)
         recyclerAdapter = BukuAdapter(this)
-        recyclerview.layoutManager = LinearLayoutManager(this)
+        binding.recyclerview.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = recyclerAdapter
 
         var dataApiKategori = ApiBuku
