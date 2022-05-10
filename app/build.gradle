@@ -19,6 +19,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // Keystore : YuuBaca / yuubacaapp - hahahihi
+
     buildTypes {
         release {
             minifyEnabled false
