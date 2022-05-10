@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../YuuBaca-app/app/src/main/res/layout/activity_main.xml" value="0.2578125" />
         <entry key="../YuuBaca-app/app/src/main/res/layout/activity_recyclerview.xml" value="0.2578125" />
         <entry key="../YuuBaca-app/app/src/main/res/layout/activity_splash.xml" value="0.2578125" />
         <entry key="../YuuBaca-app/app/src/main/res/layout/buku_adapter.xml" value="0.2578125" />
