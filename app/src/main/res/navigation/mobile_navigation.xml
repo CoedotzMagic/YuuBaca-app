@@ -9,23 +9,23 @@
         android:id="@+id/navigation_home"
         android:name="id.standherealone.yuubaca.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_save"
         android:name="id.standherealone.yuubaca.ui.save.SaveFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/save_fragment" />
+        tools:layout="@layout/fragment_save" />
 
     <fragment
         android:id="@+id/navigation_download"
         android:name="id.standherealone.yuubaca.ui.download.DownloadFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/download_fragment" />
+        tools:layout="@layout/fragment_download" />
 
     <fragment
         android:id="@+id/navigation_setting"
         android:name="id.standherealone.yuubaca.ui.setting.SettingFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/setting_fragment" />
+        tools:layout="@layout/fragment_setting" />
 </navigation>

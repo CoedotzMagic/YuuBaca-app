@@ -19,7 +19,7 @@ class BukuAdapter (val context: Context) : RecyclerView.Adapter<BukuAdapter.MyVi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.buku_adapter,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.items_buku,parent,false)
         return MyViewHolder(view)
     }
 

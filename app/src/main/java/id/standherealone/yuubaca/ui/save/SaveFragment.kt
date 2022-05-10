@@ -20,7 +20,7 @@ class SaveFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.save_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_save, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
