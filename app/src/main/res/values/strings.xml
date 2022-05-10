@@ -12,4 +12,9 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="kategori_ipa">IPA</string>
+    <string name="kategori_ips">IPS</string>
+    <string name="kategori_sd_ma">SD/MA</string>
+    <string name="kategori_smp_mts">SMP/MTS</string>
+    <string name="kategori_sma_smk">SMA/SMK</string>
 </resources>
