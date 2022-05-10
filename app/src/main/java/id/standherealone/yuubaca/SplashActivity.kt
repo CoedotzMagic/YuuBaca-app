@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getSupportActionBar()?.hide();
+        supportActionBar?.hide();
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
