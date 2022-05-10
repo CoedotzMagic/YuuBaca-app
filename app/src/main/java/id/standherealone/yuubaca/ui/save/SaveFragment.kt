@@ -23,8 +23,8 @@ class SaveFragment : Fragment() {
         return inflater.inflate(R.layout.save_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(SaveViewModel::class.java)
         // TODO: Use the ViewModel
     }
