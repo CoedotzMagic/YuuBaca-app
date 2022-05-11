@@ -65,4 +65,9 @@ class CategoryActivity : AppCompatActivity() {
             }
         })
     }
+
+    override fun onBackPressed() {
+        this.finish()
+    }
+
 }
