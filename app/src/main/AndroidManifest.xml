@@ -29,7 +29,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YuuBaca">
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,6 +37,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.category.CategoryIPAActivity"
+            android:label="IPA"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.category.CategoryIPSActivity"
+            android:label="IPS"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.category.CategorySDActivity"
+            android:label="SD"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.category.CategorySMPActivity"
+            android:label="SMP"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.category.CategorySMAActivity"
+            android:label="SMA"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
