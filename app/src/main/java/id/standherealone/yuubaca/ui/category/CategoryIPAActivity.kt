@@ -4,28 +4,16 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import id.standherealone.yuubaca.R
+import id.standherealone.yuubaca.api.*
 import id.standherealone.yuubaca.core.adapter.BukuAdapter
-import id.standherealone.yuubaca.model.Buku
-
-// DO NOT REMOVE
-
-import id.standherealone.yuubaca.api.ApiBuku
-import id.standherealone.yuubaca.api.ApiIPA
-import id.standherealone.yuubaca.api.ApiIPS
-import id.standherealone.yuubaca.api.ApiSD
-import id.standherealone.yuubaca.api.ApiSMP
-import id.standherealone.yuubaca.api.ApiSMA
 import id.standherealone.yuubaca.databinding.ActivityRecyclerviewBinding
-
-// DO NOT REMOVE
-
+import id.standherealone.yuubaca.model.Buku
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CategoryActivity : AppCompatActivity() {
+class CategoryIPAActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecyclerviewBinding
     lateinit var recyclerView: RecyclerView
@@ -43,14 +31,7 @@ class CategoryActivity : AppCompatActivity() {
         binding.recyclerview.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = recyclerAdapter
 
-        var dataApiKategori = ApiBuku
-
-        /**
-         * Create Condition to check if user select category based passing data.
-         * tapi belom w kerjain, tarr
-         * */
-
-        val apiInterface = dataApiKategori.create().getBuku()
+        val apiInterface = ApiIPA.create().getBuku()
 
         //apiInterface.enqueue( Callback<List<Buku>>())
         apiInterface.enqueue( object : Callback<List<Buku>>{
