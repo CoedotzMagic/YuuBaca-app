@@ -12,20 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_save"
-        android:name="id.standherealone.yuubaca.ui.save.SaveFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_save" />
+        android:id="@+id/navigation_category"
+        android:name="id.standherealone.yuubaca.ui.category.CategoryFragment"
+        android:label="@string/title_category"
+        tools:layout="@layout/fragment_category" />
 
     <fragment
-        android:id="@+id/navigation_download"
-        android:name="id.standherealone.yuubaca.ui.download.DownloadFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_download" />
+        android:id="@+id/navigation_favorite"
+        android:name="id.standherealone.yuubaca.ui.favorite.FavoriteFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite" />
 
     <fragment
         android:id="@+id/navigation_setting"
         android:name="id.standherealone.yuubaca.ui.setting.SettingFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_settings"
         tools:layout="@layout/fragment_setting" />
 </navigation>

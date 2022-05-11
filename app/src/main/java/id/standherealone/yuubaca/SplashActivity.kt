@@ -9,7 +9,6 @@ import android.view.Window
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import id.standherealone.yuubaca.ui.buku.ListKategoriBuku
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
