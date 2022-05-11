@@ -1,4 +1,4 @@
-package id.standherealone.yuubaca.ui.buku
+package id.standherealone.yuubaca.ui.category
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +25,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class KategoriActivity : AppCompatActivity() {
+class CategoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecyclerviewBinding
     lateinit var recyclerView: RecyclerView
