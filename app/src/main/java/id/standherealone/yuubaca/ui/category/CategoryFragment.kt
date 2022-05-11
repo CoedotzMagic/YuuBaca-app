@@ -1,13 +1,14 @@
 package id.standherealone.yuubaca.ui.category
 
-import androidx.lifecycle.ViewModelProvider
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import id.standherealone.yuubaca.databinding.FragmentCategoryBinding
+
 
 class CategoryFragment : Fragment() {
 
@@ -30,27 +31,32 @@ class CategoryFragment : Fragment() {
 
         // Binding IPA
         binding.btnKategoriIpa.setOnClickListener {
-            Toast.makeText(context,"Ini IPA ya Anjenk!", Toast.LENGTH_SHORT).show()
+            val ipa = Intent(context, CategoryIPAActivity::class.java)
+            startActivity(ipa)
         }
 
         // Binding IPS
         binding.btnKategoriIps.setOnClickListener {
-            Toast.makeText(context,"Ini IPS ya Anjenk!", Toast.LENGTH_SHORT).show()
+            val ips = Intent(context, CategoryIPSActivity::class.java)
+            startActivity(ips)
         }
 
         // Binding SD
         binding.btnKategoriSd.setOnClickListener {
-            Toast.makeText(context,"Ini SD ya Anjenk!", Toast.LENGTH_SHORT).show()
+            val sd = Intent(context, CategorySDActivity::class.java)
+            startActivity(sd)
         }
 
         // Binding SMP
         binding.btnKategoriSmp.setOnClickListener {
-            Toast.makeText(context,"Ini SMP ya Anjenk!", Toast.LENGTH_SHORT).show()
+            val smp = Intent(context, CategorySMPActivity::class.java)
+            startActivity(smp)
         }
 
         // Binding SMA
         binding.btnKategoriSma.setOnClickListener {
-            Toast.makeText(context,"Ini SMA ya Anjenk!", Toast.LENGTH_SHORT).show()
+            val sma = Intent(context, CategorySMAActivity::class.java)
+            startActivity(sma)
         }
     }
 
