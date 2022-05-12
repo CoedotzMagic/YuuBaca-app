@@ -15,7 +15,8 @@
         android:layout_margin="10dp"
         android:clickable="true"
         app:cardCornerRadius="24dp"
-        app:cardElevation="7dp">
+        app:cardElevation="7dp"
+        android:layout_gravity="center">
 
         <LinearLayout
             android:id="@+id/card1"
