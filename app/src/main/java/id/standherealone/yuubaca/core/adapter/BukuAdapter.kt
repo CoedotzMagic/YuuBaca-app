@@ -33,8 +33,8 @@ class BukuAdapter (val context: Context) : RecyclerView.Adapter<BukuAdapter.MyVi
             .apply(RequestOptions().centerCrop())
             .into(holder.image)
         holder.titleBook.text = bukuList.get(position).judul
-        holder.authorBook.text = bukuList.get(position).penulis
-        holder.descBook.text = bukuList.get(position).sipnosis
+        holder.authorBook.text = bukuList.get(position).author
+        holder.descBook.text = bukuList.get(position).deskripsi
         holder.fileBook.text = bukuList.get(position).file
     }
 
