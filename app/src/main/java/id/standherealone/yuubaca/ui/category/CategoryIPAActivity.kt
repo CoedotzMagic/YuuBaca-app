@@ -1,11 +1,13 @@
 package id.standherealone.yuubaca.ui.category
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import id.standherealone.yuubaca.R
-import id.standherealone.yuubaca.api.*
+import id.standherealone.yuubaca.api.ApiIPA
 import id.standherealone.yuubaca.core.adapter.BukuAdapter
 import id.standherealone.yuubaca.databinding.ActivityRecyclerviewBinding
 import id.standherealone.yuubaca.model.Buku
@@ -42,7 +44,13 @@ class CategoryIPAActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<Buku>>?, t: Throwable?) {
-
+                Snackbar.make(
+                    findViewById(android.R.id.content),
+                    R.string.failed_load_data_api,
+                    Snackbar.LENGTH_LONG)
+                    .setAction("OK", null)
+                    .setTextColor(Color.BLACK)
+                    .show()
             }
         })
     }
