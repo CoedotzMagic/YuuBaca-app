@@ -23,4 +23,7 @@
     <string name="kategori_sd_ma">SD/MA</string>
     <string name="kategori_smp_mts">SMP/MTS</string>
     <string name="kategori_sma_smk">SMA/SMK</string>
+    <string name="press_again_exit_app">Tekan lagi untuk keluar</string>
+    <string name="cek_jaringan">Wah, Tidak Ada Koneksi Internet!</string>
+    <string name="isi_tidakkoneksi">Dibutuhkan akses koneksi internet untuk mengakses aplikasi YuuBaca.\n\nSilahkan coba lagi nanti dan pastikan terhubung koneksi internet!</string>
 </resources>
