@@ -1,13 +1,14 @@
 package id.standherealone.yuubaca.ui.home
 
 import android.graphics.Color
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
@@ -19,6 +20,7 @@ import id.standherealone.yuubaca.model.Buku
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class HomeFragment : Fragment() {
 
@@ -43,7 +45,7 @@ class HomeFragment : Fragment() {
 
         recyclerView = binding.recyclerview
         recyclerAdapter = BukuAdapter(requireContext())
-        binding.recyclerview.layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = GridLayoutManager(context, 2)
         recyclerView.adapter = recyclerAdapter
 
 

@@ -3,6 +3,7 @@ package id.standherealone.yuubaca.ui.category
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
@@ -30,7 +31,7 @@ class CategorySMAActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerview)
         recyclerAdapter = BukuAdapter(this)
-        binding.recyclerview.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.adapter = recyclerAdapter
 
         val apiInterface = ApiSMA.create().getBuku()
