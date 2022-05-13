@@ -1,12 +1,13 @@
 package id.standherealone.yuubaca
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import id.standherealone.yuubaca.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -31,5 +32,19 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    var exitTime: Long = 0
+    fun doExitApp() {
+        if (System.currentTimeMillis() - exitTime > 2000) {
+            Toast.makeText(this, R.string.press_again_exit_app, Toast.LENGTH_SHORT).show()
+            exitTime = System.currentTimeMillis()
+        } else {
+            finish()
+        }
+    }
+
+    override fun onBackPressed() {
+        doExitApp()
     }
 }
