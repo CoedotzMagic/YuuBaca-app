@@ -1,5 +1,8 @@
 package id.standherealone.yuubaca
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import id.standherealone.yuubaca.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +36,24 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        // if app detection no connection network
+        if (!isConnect()) {
+            AlertDialog.Builder(this)
+                .setTitle(R.string.cek_jaringan)
+                .setMessage(R.string.isi_tidakkoneksi)
+                .setCancelable(false)
+                .setPositiveButton("OK"
+                ) { _: DialogInterface?, _: Int -> this.finish() }
+                .show()
+        }
+    }
+
+    @Suppress("DEPRECATION")
+    fun isConnect(): Boolean {
+        val cm = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = Objects.requireNonNull(cm).activeNetworkInfo
+        return netInfo != null && netInfo.isConnectedOrConnecting
     }
 
     var exitTime: Long = 0
