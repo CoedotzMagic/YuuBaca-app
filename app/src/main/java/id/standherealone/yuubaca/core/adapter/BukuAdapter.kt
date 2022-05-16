@@ -1,6 +1,7 @@
 package id.standherealone.yuubaca.core.adapter
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,14 +29,24 @@ class BukuAdapter (val context: Context) : RecyclerView.Adapter<BukuAdapter.MyVi
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
-        Glide.with(context).load(bukuList.get(position).gambar)
-            .apply(RequestOptions().centerCrop())
-            .into(holder.image)
         holder.titleBook.text = bukuList.get(position).judul
-        holder.authorBook.text = bukuList.get(position).author
-        holder.descBook.text = bukuList.get(position).deskripsi
-        holder.fileBook.text = bukuList.get(position).file
+        Glide.with(context).load(bukuList.get(position).gambar)
+            .apply(RequestOptions.centerCropTransform()).into(holder.image)
+
+        val buku: Buku = bukuList.get(position)
+
+        val images: String = buku.gambar
+        val judul: String = buku.judul
+        val penulis: String = buku.author
+        val isi: String = buku.deskripsi
+        val file: String = buku.file
+
+        // Bind
+        holder.image.setImageURI((Uri.parse(images)))
+        holder.titleBook.text = judul
+        holder.authorBook.text = penulis
+        holder.descBook.text = isi
+        holder.fileBook.text = file
     }
 
     fun setBukuListItems(bukuList: List<Buku>){
