@@ -1,6 +1,7 @@
 package id.standherealone.yuubaca.core.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -14,23 +15,20 @@ import com.bumptech.glide.request.RequestOptions
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.core.PicassoClient
 import id.standherealone.yuubaca.model.Buku
+import id.standherealone.yuubaca.ui.detail.DetailActivity
 
-class BukuAdapter (val context: Context) : RecyclerView.Adapter<BukuAdapter.MyViewHolder>() {
+class BukuAdapter(val context: Context) : RecyclerView.Adapter<BukuAdapter.MyViewHolder>() {
 
-    var bukuList : List<Buku> = listOf()
+    var bukuList: List<Buku> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.items_buku,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.items_buku, parent, false)
         return MyViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return bukuList.size
-    }
-
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.titleBook.text = bukuList.get(position).judul
+    override fun onBindViewHolder(holder: BukuAdapter.MyViewHolder, position: Int) {
+        holder.titleBook!!.text = bukuList.get(position).judul
         Glide.with(context).load(bukuList.get(position).gambar)
             .apply(RequestOptions.centerCropTransform()).into(holder.image)
 
@@ -43,29 +41,73 @@ class BukuAdapter (val context: Context) : RecyclerView.Adapter<BukuAdapter.MyVi
         val file: String = buku.file
 
         // Bind
-        holder.image.setImageURI((Uri.parse(images)))
-        holder.titleBook.text = judul
-        holder.authorBook.text = penulis
-        holder.descBook.text = isi
-        holder.fileBook.text = file
+        holder.image!!.setImageURI((Uri.parse(images)))
+        holder.titleBook!!.text = judul
+        holder.authorBook!!.text = penulis
+        holder.descBook!!.text = isi
+        holder.fileBook!!.text = file
 
         // Library picasso for handling cache image & when data cant load
-        PicassoClient.downloadImage(context, bukuList.get(position).gambar, holder.image
-        )
+        PicassoClient.downloadImage(context, bukuList.get(position).gambar, holder.image)
+
+        holder.setItemClickListener(object : ItemClickListener {
+            override fun onItemClick(pos: Int) {
+                openDetailActivity(images, judul, penulis, isi, file)
+            }
+        })
     }
 
-    fun setBukuListItems(bukuList: List<Buku>){
+    override fun getItemCount(): Int {
+        return bukuList.size
+    }
+
+    // open activity
+    private fun openDetailActivity(vararg details: String) {
+        val i = Intent(context, DetailActivity::class.java)
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        i.putExtra("images", details[0])
+        i.putExtra("title", details[1])
+        i.putExtra("author", details[2])
+        i.putExtra("sipnosis", details[3])
+        i.putExtra("file", details[4])
+        context.startActivity(i)
+    }
+
+    fun setBukuListItems(bukuList: List<Buku>) {
         this.bukuList = bukuList;
         notifyDataSetChanged()
     }
 
-    class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
+    interface ItemClickListener {
+        fun onItemClick(pos: Int)
+    }
 
-        val image: ImageView = itemView!!.findViewById(R.id.thumbnail)
-        val titleBook: TextView = itemView!!.findViewById(R.id.title)
-        val authorBook: TextView = itemView!!.findViewById(R.id.author)
-        val descBook: TextView = itemView!!.findViewById(R.id.descbook)
-        val fileBook: TextView = itemView!!.findViewById(R.id.filebook)
+    inner class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!),
+        View.OnClickListener {
 
+        private lateinit var itemClickListener: ItemClickListener
+
+        var image: ImageView? = null
+        var titleBook: TextView? = null
+        var authorBook: TextView? = null
+        var descBook: TextView? = null
+        var fileBook: TextView? = null
+
+        init {
+            image = itemView!!.findViewById<View>(R.id.thumbnail) as ImageView
+            titleBook = itemView.findViewById<View>(R.id.title) as TextView
+            authorBook = itemView.findViewById<View>(R.id.author) as TextView
+            descBook = itemView.findViewById<View>(R.id.descbook) as TextView
+            fileBook = itemView.findViewById<View>(R.id.filebook) as TextView
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(view: View) {
+            this.itemClickListener.onItemClick(this.layoutPosition)
+        }
+
+        fun setItemClickListener(itemClickListener: ItemClickListener) {
+            this.itemClickListener = itemClickListener
+        }
     }
 }
