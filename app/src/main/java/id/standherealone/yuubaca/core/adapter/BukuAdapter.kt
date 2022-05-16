@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 import id.standherealone.yuubaca.R
+import id.standherealone.yuubaca.core.PicassoClient
 import id.standherealone.yuubaca.model.Buku
 
 class BukuAdapter (val context: Context) : RecyclerView.Adapter<BukuAdapter.MyViewHolder>() {
@@ -47,6 +48,10 @@ class BukuAdapter (val context: Context) : RecyclerView.Adapter<BukuAdapter.MyVi
         holder.authorBook.text = penulis
         holder.descBook.text = isi
         holder.fileBook.text = file
+
+        // Library picasso for handling cache image & when data cant load
+        PicassoClient.downloadImage(context, bukuList.get(position).gambar, holder.image
+        )
     }
 
     fun setBukuListItems(bukuList: List<Buku>){
