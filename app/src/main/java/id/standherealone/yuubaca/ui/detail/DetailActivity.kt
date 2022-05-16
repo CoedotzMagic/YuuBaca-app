@@ -43,6 +43,8 @@ class DetailActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+        // disini gw harus balikin lagi datanya & pake putextra
+        // biar pas balik2 datanya masih ada, karena passing data
         this.finish()
     }
 }
