@@ -20,7 +20,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/ipa2">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -42,7 +43,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/ips">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -63,13 +65,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/sd">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/kategori_sd_ma"
+                    android:text="@string/kategori_sd_mi"
                     android:textSize="24sp"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent" />
@@ -85,7 +88,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/smp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -107,7 +111,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/sma">
 
                 <TextView
                     android:layout_width="match_parent"
