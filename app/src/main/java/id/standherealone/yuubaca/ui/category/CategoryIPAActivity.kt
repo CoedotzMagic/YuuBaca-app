@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import id.standherealone.yuubaca.R
@@ -37,21 +36,21 @@ class CategoryIPAActivity : AppCompatActivity() {
         val apiInterface = ApiIPA.create().getBuku()
 
         //apiInterface.enqueue( Callback<List<Buku>>())
-        apiInterface.enqueue( object : Callback<List<Buku>>{
+        apiInterface.enqueue(object : Callback<List<Buku>> {
             override fun onResponse(call: Call<List<Buku>>?, response: Response<List<Buku>>?) {
 
-                if(response?.body() != null)
+                if (response?.body() != null)
                     recyclerAdapter.setBukuListItems(response.body()!!)
             }
 
             override fun onFailure(call: Call<List<Buku>>?, t: Throwable?) {
-                Snackbar.make(
-                    findViewById(android.R.id.content),
-                    R.string.failed_load_data_api,
-                    Snackbar.LENGTH_LONG)
-                    .setAction("OK", null)
-                    .setTextColor(Color.BLACK)
-                    .show()
+                val snackbar =
+                    Snackbar.make(
+                        findViewById(android.R.id.content),
+                        R.string.failed_load_data_api,
+                        Snackbar.LENGTH_SHORT
+                    )
+                snackbar.show()
             }
         })
     }

@@ -37,21 +37,21 @@ class CategoryIPSActivity : AppCompatActivity() {
         val apiInterface = ApiIPS.create().getBuku()
 
         //apiInterface.enqueue( Callback<List<Buku>>())
-        apiInterface.enqueue( object : Callback<List<Buku>>{
+        apiInterface.enqueue(object : Callback<List<Buku>> {
             override fun onResponse(call: Call<List<Buku>>?, response: Response<List<Buku>>?) {
 
-                if(response?.body() != null)
+                if (response?.body() != null)
                     recyclerAdapter.setBukuListItems(response.body()!!)
             }
 
             override fun onFailure(call: Call<List<Buku>>?, t: Throwable?) {
-                Snackbar.make(
-                    findViewById(android.R.id.content),
-                    R.string.failed_load_data_api,
-                    Snackbar.LENGTH_LONG)
-                    .setAction("OK", null)
-                    .setTextColor(Color.BLACK)
-                    .show()
+                val snackbar =
+                    Snackbar.make(
+                        findViewById(android.R.id.content),
+                        R.string.failed_load_data_api,
+                        Snackbar.LENGTH_SHORT
+                    )
+                snackbar.show()
 
             }
         })
