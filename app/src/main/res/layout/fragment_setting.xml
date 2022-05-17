@@ -54,41 +54,6 @@
                     android:background="@color/colorSeparator" />
 
                 <LinearLayout
-                    android:id="@+id/lyt_contact_us"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:minHeight="@dimen/spacing_xxlarge"
-                    android:onClick="onClickLayout"
-                    android:paddingLeft="@dimen/spacing_mlarge"
-                    android:paddingRight="@dimen/spacing_mlarge">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:paddingLeft="10dp"
-                        android:background="@mipmap/ic_launcher"/>
-
-                    <TextView
-                        android:id="@+id/kontakkami"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10dp"
-                        android:text="@string/feedback_title"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/colorTextAction" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="@color/colorSeparator" />
-
-                <LinearLayout
                     android:id="@+id/lyt_term_policies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
