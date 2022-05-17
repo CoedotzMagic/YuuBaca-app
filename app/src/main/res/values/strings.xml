@@ -46,7 +46,7 @@
     <string name="setting_group_others">Lainnya</string>
     <string name="setting_title_copyright">Copyright</string>
     <string name="setting_title_contact_us">Kontak Kami</string>
-    <string name="setting_title_build">Versi</string>
+    <string name="setting_title_build">Versi Aplikasi</string>
     <string name="setting_title_term">Kebijakan Privasi</string>
     <string name="setting_title_rate">Berikan Rating</string>
     <string name="feedback_title">Feedback &amp; Saran</string>
@@ -55,6 +55,9 @@
     <string name="version_unknown">Tidak Diketahui</string>
     <string name="OK">OK</string>
     <string name="CANCEL">Batal</string>
+    <string name="setting_title_friends">Beritahu Teman</string>
+    <string name="about_app"><![CDATA[Azriel, Wiko & Coedotz\nYuuBaca ©2022]]></string>
+    <string name="share_text">Baca buku perpustakaan gratis dan lengkap hanya di YuuBaca!\n\nUnduh Sekarang!http://play.google.com/store/apps/details?id=id.standherealone.yuubaca</string>
     <string-array name="themes">
         <item>Cerah</item>
         <item>Gelap</item>
