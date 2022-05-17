@@ -50,7 +50,7 @@
     <string name="setting_title_term">Kebijakan Privasi</string>
     <string name="setting_title_rate">Berikan Rating</string>
     <string name="feedback_title">Feedback &amp; Saran</string>
-    <string name="report_problem">Laporkan Masalah</string>
+    <string name="report_problem">Laporkan Masalah / Feedback &amp; Saran</string>
     <string name="app_version"> </string>
     <string name="version_unknown">Tidak Diketahui</string>
     <string name="OK">OK</string>
@@ -63,4 +63,24 @@
         <item>Gelap</item>
         <item>Otomatis</item>
     </string-array>
+
+    <!-- Feedback -->
+    <string name="file_name_device_info" translatable="false">deviceInf.txt</string>
+    <string name="file_name_device_log" translatable="false">deviceLog.txt</string>
+    <string name="feedback_mail_subject">Feedback &amp; Saran %1$s</string>
+    <string name="cancel">Batalkan</string>
+    <string name="Ok">OK</string>
+    <string name="your_input">Tuliskan Feedback &amp; Saran Anda</string>
+    <string name="send_feedback">Kirim</string>
+    <string name="please_write">Tolong tuliskan sesuatu.</string>
+    <string name="send_feedback_two">Kirim Feedback</string>
+    <string name="select_image">+ Tambahkan Screenshot</string>
+    <string name="click_again">Klik lagi untuk mengubah gambar</string>
+    <string name="select_picture_title">Pilih Gambar</string>
+    <string name="info_fedback_legal_start">"Anda "</string>
+    <string name="info_fedback_legal_system_info">"info sistem "</string>
+    <string name="info_fedback_legal_and">"dan "</string>
+    <string name="info_fedback_legal_log_data">"log data "</string>
+    <string name="info_fedback_legal_will_be_sent">akan dikirim ke %s</string>
+    <string name="permissionsgambar">Anda harus mengizinkan akses ke kartu SD untuk memilih gambar.</string>
 </resources>
