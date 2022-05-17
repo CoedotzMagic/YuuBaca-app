@@ -2,6 +2,7 @@ package id.standherealone.yuubaca
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.widget.Toast
@@ -12,6 +13,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import id.standherealone.yuubaca.databinding.ActivityMainBinding
+import id.standherealone.yuubaca.ui.WelcomeToYuuBaca
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -47,6 +49,18 @@ class MainActivity : AppCompatActivity() {
                 ) { _: DialogInterface?, _: Int -> this.finish() }
                 .show()
         }
+
+        // first run for handling premissions
+        val firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true)
+        if (firstrun) {
+            val i = Intent(this@MainActivity, WelcomeToYuuBaca::class.java)
+            startActivity(i)
+        }
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+            .edit()
+            .putBoolean("firstrun", false)
+            .apply()
+
     }
 
     @Suppress("DEPRECATION")

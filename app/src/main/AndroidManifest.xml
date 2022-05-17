@@ -69,6 +69,10 @@
             android:name=".ui.feedback.FeedbackActivity"
             android:label="@string/feedback_title"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.WelcomeToYuuBaca"
+            android:screenOrientation="portrait" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -78,5 +82,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
         </provider>
+
     </application>
 </manifest>
