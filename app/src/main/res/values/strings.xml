@@ -27,4 +27,37 @@
     <string name="cek_jaringan">Wah, Tidak Ada Koneksi Internet!</string>
     <string name="isi_tidakkoneksi">Dibutuhkan akses koneksi internet untuk mengakses aplikasi YuuBaca.\n\nSilahkan coba lagi nanti dan pastikan terhubung koneksi internet!</string>
     <string name="failed_load_data_api">Gagal Memuat Data, Pastikan Terhubung Internet, Silahkan Coba Lagi!</string>
+
+    <!-- Settings -->
+
+    <string name="setting_title_notif">Push Notifikasi</string>
+    <string name="setting_title_ringtone">Nada Dering</string>
+    <string name="setting_title_vibrate">Getar</string>
+    <string name="setting_title_theme">Tema</string>
+    <string name="setting_title_enable_cache">Aktifkan Cache Gambar</string>
+    <string name="setting_title_cache">Hapus Cache Gambar</string>
+    <string name="ringtone_default">Default</string>
+    <string name="email_copied">Email Disalin ke Clipboard</string>
+    <string name="dialog_confirm_title">Konfirmasi</string>
+    <string name="message_clear_image_cache">Anda yakin ingin menghapus cache gambar?</string>
+    <string name="message_after_clear_image_cache">cache gambar berhasil dihapus</string>
+    <string name="setting_group_notif">Notifikasi</string>
+    <string name="setting_group_display">Tampilan</string>
+    <string name="setting_group_others">Lainnya</string>
+    <string name="setting_title_copyright">Copyright</string>
+    <string name="setting_title_contact_us">Kontak Kami</string>
+    <string name="setting_title_build">Versi</string>
+    <string name="setting_title_term">Kebijakan Privasi</string>
+    <string name="setting_title_rate">Berikan Rating</string>
+    <string name="feedback_title">Feedback &amp; Saran</string>
+    <string name="report_problem">Laporkan Masalah</string>
+    <string name="app_version"> </string>
+    <string name="version_unknown">Tidak Diketahui</string>
+    <string name="OK">OK</string>
+    <string name="CANCEL">Batal</string>
+    <string-array name="themes">
+        <item>Cerah</item>
+        <item>Gelap</item>
+        <item>Otomatis</item>
+    </string-array>
 </resources>
