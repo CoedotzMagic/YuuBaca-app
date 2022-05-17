@@ -83,4 +83,6 @@
     <string name="info_fedback_legal_log_data">"log data "</string>
     <string name="info_fedback_legal_will_be_sent">akan dikirim ke %s</string>
     <string name="permissionsgambar">Anda harus mengizinkan akses ke kartu SD untuk memilih gambar.</string>
+    <string name="btn_selamatdatang">Mulai YuuBaca!</string>
+    <string name="privacy_policy"><![CDATA[\nKebijakan Pengguna & Privasi]]></string>
 </resources>
