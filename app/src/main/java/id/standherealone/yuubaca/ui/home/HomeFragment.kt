@@ -1,11 +1,13 @@
 package id.standherealone.yuubaca.ui.home
 
+import android.app.SearchManager
 import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.util.Log
+import android.view.*
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -29,6 +31,8 @@ class HomeFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var recyclerAdapter: BukuAdapter
     private var shimmer: ShimmerFrameLayout? = null
+    lateinit var searchView: SearchView
+    lateinit var bukuList: List<Buku>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,15 +54,19 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = GridLayoutManager(context, 2)
         recyclerView.adapter = recyclerAdapter
 
-
+        bukuList = ArrayList<Buku>()
         val apiInterface = ApiBuku.create().getBuku()
 
         //apiInterface.enqueue( Callback<List<Buku>>())
         apiInterface.enqueue( object : Callback<List<Buku>> {
             override fun onResponse(call: Call<List<Buku>>?, response: Response<List<Buku>>?) {
 
-                if(response?.body() != null)
-                    recyclerAdapter.setBukuListItems(response.body()!!)
+//                if (response?.body() != null)
+//                    recyclerAdapter.setBukuListItems(response.body()!!)
+
+                bukuList = response!!.body()!!
+                Log.d("TAG", "Response = $bukuList")
+                recyclerAdapter.setBukuList(requireContext(), bukuList)
 
                 //shimmer
                 shimmer!!.stopShimmer()
@@ -77,6 +85,37 @@ class HomeFragment : Fragment() {
         })
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        val searchManager = getSystemService(AppCompatActivity.SEARCH_SERVICE) as SearchManager
+        searchView = menu.findItem(R.id.action_search)
+            .actionView as SearchView
+        searchView.setSearchableInfo(
+            searchManager
+                .getSearchableInfo(componentName)
+        )
+        searchView.maxWidth = Int.MAX_VALUE
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                recyclerAdapter.getFilter()?.filter(query)
+                return false
+            }
+
+            override fun onQueryTextChange(query: String): Boolean {
+                recyclerAdapter.getFilter()?.filter(query)
+                return false
+            }
+        })
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        return if (id == R.id.action_search) {
+            true
+        } else super.onOptionsItemSelected(item)
+    }
+
     override fun onResume() {
         super.onResume()
         shimmer!!.startShimmer()
@@ -85,6 +124,14 @@ class HomeFragment : Fragment() {
     override fun onPause() {
         shimmer!!.stopShimmer()
         super.onPause()
+    }
+
+    override fun onBackPressed() {
+        if (!searchView.isIconified) {
+            searchView.isIconified = true
+            return
+        }
+        super.onBackPressed()
     }
 
 }
