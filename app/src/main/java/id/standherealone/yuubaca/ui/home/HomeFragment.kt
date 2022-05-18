@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.material.snackbar.Snackbar
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.api.ApiBuku
@@ -28,6 +28,7 @@ class HomeFragment : Fragment() {
     private lateinit var viewModel: HomeViewModel
     lateinit var recyclerView: RecyclerView
     lateinit var recyclerAdapter: BukuAdapter
+    private var shimmer: ShimmerFrameLayout? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +45,7 @@ class HomeFragment : Fragment() {
         // TODO: Use the ViewModel
 
         recyclerView = binding.recyclerview
+        shimmer = binding.shimmerHome
         recyclerAdapter = BukuAdapter(requireContext())
         recyclerView.layoutManager = GridLayoutManager(context, 2)
         recyclerView.adapter = recyclerAdapter
@@ -57,6 +59,10 @@ class HomeFragment : Fragment() {
 
                 if(response?.body() != null)
                     recyclerAdapter.setBukuListItems(response.body()!!)
+
+                //shimmer
+                shimmer!!.stopShimmer()
+                shimmer!!.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<List<Buku>>?, t: Throwable?) {
@@ -69,6 +75,16 @@ class HomeFragment : Fragment() {
                 snackbar.show()
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        shimmer!!.startShimmer()
+    }
+
+    override fun onPause() {
+        shimmer!!.stopShimmer()
+        super.onPause()
     }
 
 }

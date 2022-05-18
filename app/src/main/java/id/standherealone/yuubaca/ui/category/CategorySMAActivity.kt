@@ -2,10 +2,12 @@ package id.standherealone.yuubaca.ui.category
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.material.snackbar.Snackbar
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.api.*
@@ -21,6 +23,7 @@ class CategorySMAActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecyclerviewBinding
     lateinit var recyclerView: RecyclerView
     lateinit var recyclerAdapter: BukuAdapter
+    private var shimmer: ShimmerFrameLayout? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +33,7 @@ class CategorySMAActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         recyclerView = findViewById(R.id.recyclerview)
+        shimmer = binding.shimmerHome
         recyclerAdapter = BukuAdapter(this)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.adapter = recyclerAdapter
@@ -42,6 +46,10 @@ class CategorySMAActivity : AppCompatActivity() {
 
                 if (response?.body() != null)
                     recyclerAdapter.setBukuListItems(response.body()!!)
+
+                //shimmer
+                shimmer!!.stopShimmer()
+                shimmer!!.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<List<Buku>>?, t: Throwable?) {
@@ -55,6 +63,16 @@ class CategorySMAActivity : AppCompatActivity() {
 
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        shimmer!!.startShimmer()
+    }
+
+    override fun onPause() {
+        shimmer!!.stopShimmer()
+        super.onPause()
     }
 
     override fun onBackPressed() {
