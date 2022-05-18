@@ -44,6 +44,12 @@
 
 # ----- END RETROFIT RULES -------
 
+# ----- RULE ONESIGNAL NOTIFICATION -----
+
+-keep class com.onesignal.** { *; }
+
+# ----- END RULE ONESIGNAL NOTIFICATION -----
+
 # Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the
 # proguardFiles setting in build.gradle.
