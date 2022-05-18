@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.onesignal.OneSignal
 import id.standherealone.yuubaca.databinding.ActivityMainBinding
 import id.standherealone.yuubaca.ui.WelcomeToYuuBaca
 import java.util.*
@@ -60,6 +61,10 @@ class MainActivity : AppCompatActivity() {
             .edit()
             .putBoolean("firstrun", false)
             .apply()
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId("3d588d2a-95be-4345-9b1c-bbfc4f44b69d");
 
     }
 
