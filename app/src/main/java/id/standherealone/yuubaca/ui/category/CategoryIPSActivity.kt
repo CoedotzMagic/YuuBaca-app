@@ -124,7 +124,6 @@ class CategoryIPSActivity : AppCompatActivity() {
             return
         }
         super.onBackPressed()
-        this.finish()
     }
 
 }

@@ -121,7 +121,6 @@ class CategoryIPAActivity : AppCompatActivity() {
             return
         }
         super.onBackPressed()
-        this.finish()
     }
 
 }

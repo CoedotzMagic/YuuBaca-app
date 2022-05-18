@@ -124,7 +124,6 @@ class CategorySDActivity : AppCompatActivity() {
             return
         }
         super.onBackPressed()
-        this.finish()
     }
 
 }
