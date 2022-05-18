@@ -21,6 +21,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <meta-data android:name="com.onesignal.NotificationOpened.DEFAULT" android:value="DISABLE" />
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
@@ -72,6 +74,13 @@
         <activity
             android:name=".ui.WelcomeToYuuBaca"
             android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_sound"
+            android:resource="@raw/notifikasi" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
