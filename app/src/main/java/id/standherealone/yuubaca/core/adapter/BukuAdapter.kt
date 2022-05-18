@@ -6,20 +6,58 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.core.PicassoClient
 import id.standherealone.yuubaca.model.Buku
 import id.standherealone.yuubaca.ui.detail.DetailActivity
 
-class BukuAdapter(val context: Context) : RecyclerView.Adapter<BukuAdapter.MyViewHolder>() {
+class BukuAdapter(var context: Context) : RecyclerView.Adapter<BukuAdapter.MyViewHolder>() {
 
     var bukuList: List<Buku> = listOf()
+    var bukuListFiltered: List<Buku> = listOf()
+
+    fun setBukuList(context: Context, bukuList: List<Buku>) {
+        this.context = context!!
+        if (bukuList == null) {
+            this.bukuList = bukuList
+            this.bukuListFiltered = bukuList
+            notifyItemChanged(0, bukuListFiltered.size)
+        } else {
+            val result = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
+                override fun getOldListSize(): Int {
+                    return this@BukuAdapter.bukuList.size
+                }
+
+                override fun getNewListSize(): Int {
+                    return bukuList.size
+                }
+
+                override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+                    return this@BukuAdapter.bukuList.get(oldItemPosition)
+                        .judul === bukuList[newItemPosition].judul
+                }
+
+                override fun areContentsTheSame(
+                    oldItemPosition: Int,
+                    newItemPosition: Int
+                ): Boolean {
+                    val newBook: Buku = this@BukuAdapter.bukuList.get(oldItemPosition)
+                    val oldBook: Buku = bukuList[newItemPosition]
+                    return newBook.judul === oldBook.judul
+                }
+            })
+            this.bukuList = bukuList
+            this.bukuListFiltered = bukuList
+            result.dispatchUpdatesTo(this)
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
@@ -28,11 +66,11 @@ class BukuAdapter(val context: Context) : RecyclerView.Adapter<BukuAdapter.MyVie
     }
 
     override fun onBindViewHolder(holder: BukuAdapter.MyViewHolder, position: Int) {
-        holder.titleBook!!.text = bukuList.get(position).judul
-        Glide.with(context).load(bukuList.get(position).gambar)
+        holder.titleBook!!.text = bukuListFiltered.get(position).judul
+        Glide.with(context).load(bukuListFiltered.get(position).gambar)
             .apply(RequestOptions.centerCropTransform()).into(holder.image!!)
 
-        val buku: Buku = bukuList.get(position)
+        val buku: Buku = bukuListFiltered.get(position)
 
         val images: String = buku.gambar
         val judul: String = buku.judul
@@ -48,7 +86,7 @@ class BukuAdapter(val context: Context) : RecyclerView.Adapter<BukuAdapter.MyVie
         holder.fileBook!!.text = file
 
         // Library picasso for handling cache image & when data cant load
-        PicassoClient.downloadImage(context, bukuList.get(position).gambar, holder.image)
+        PicassoClient.downloadImage(context, bukuListFiltered.get(position).gambar, holder.image)
 
         holder.setItemClickListener(object : ItemClickListener {
             override fun onItemClick(pos: Int) {
@@ -58,7 +96,11 @@ class BukuAdapter(val context: Context) : RecyclerView.Adapter<BukuAdapter.MyVie
     }
 
     override fun getItemCount(): Int {
-        return bukuList.size
+        return if (bukuList != null) {
+            bukuListFiltered.size
+        } else {
+            0
+        }
     }
 
     // open activity
@@ -71,6 +113,33 @@ class BukuAdapter(val context: Context) : RecyclerView.Adapter<BukuAdapter.MyVie
         i.putExtra("sipnosis", details[3])
         i.putExtra("file", details[4])
         context.startActivity(i)
+    }
+
+    fun getFilter(): Filter? {
+        return object : Filter() {
+            override fun performFiltering(charSequence: CharSequence): FilterResults {
+                val charString = charSequence.toString()
+                if (charString.isEmpty()) {
+                    bukuListFiltered = bukuList
+                } else {
+                    val filteredList: MutableList<Buku> = ArrayList<Buku>()
+                    for (books in bukuList) {
+                        if (books.judul.lowercase().contains(charString.lowercase())) {
+                            filteredList.add(books)
+                        }
+                    }
+                    bukuListFiltered = filteredList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = bukuListFiltered
+                return filterResults
+            }
+
+            override fun publishResults(charSequence: CharSequence, filterResults: FilterResults) {
+                bukuListFiltered = filterResults.values as ArrayList<Buku>
+                notifyDataSetChanged()
+            }
+        }
     }
 
     fun setBukuListItems(bukuList: List<Buku>) {
