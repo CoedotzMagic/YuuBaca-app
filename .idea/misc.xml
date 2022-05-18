@@ -24,6 +24,8 @@
         <entry key="../YuuBaca-app/app/src/main/res/layout/items_buku.xml" value="0.2578125" />
         <entry key="../YuuBaca-app/app/src/main/res/layout/kategori.xml" value="0.2578125" />
         <entry key="../YuuBaca-app/app/src/main/res/layout/list_kategori.xml" value="0.2578125" />
+        <entry key="../YuuBaca-app/app/src/main/res/layout/loading_shimmer_cardlist.xml" value="0.2578125" />
+        <entry key="../YuuBaca-app/app/src/main/res/layout/loading_shimmer_gridlist.xml" value="0.2578125" />
         <entry key="../YuuBaca-app/app/src/main/res/layout/toolbar.xml" value="0.2578125" />
         <entry key="../YuuBaca-app/app/src/main/res/layout/webview.xml" value="0.18177083333333333" />
         <entry key="../YuuBaca-app/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18177083333333333" />
