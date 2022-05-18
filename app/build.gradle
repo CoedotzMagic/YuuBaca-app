@@ -9,11 +9,16 @@ android {
     compileSdk 32
 
     defaultConfig {
+        manifestPlaceholders = [onesignal_app_id               : "3d588d2a-95be-4345-9b1c-bbfc4f44b69d",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
+
         applicationId "id.standherealone.yuubaca"
         minSdk 21
         targetSdk 33
         versionCode 1
         versionName "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -55,6 +60,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     // Google & Firebase
     implementation 'com.google.firebase:firebase-analytics-ktx:21.0.0'
@@ -72,6 +78,10 @@ dependencies {
 
     //Facebook
     implementation 'com.facebook.shimmer:shimmer:0.4.0'
+
+    //Onesignal Notification
+//    implementation 'com.onesignal:OneSignal:3.11.1'
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
