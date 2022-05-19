@@ -354,7 +354,7 @@ class WelcomeToYuuBaca : AppCompatActivity() {
         try {
             val fos =
                 openFileOutput(VIDEO_NAME, MODE_PRIVATE)
-            val `in` = resources.openRawResource(R.raw.welcomevid_mobile)
+            val `in` = resources.openRawResource(R.raw.welcomevid_mobilex)
             val buff = ByteArray(1024)
             var len = 0
             while (`in`.read(buff).also { len = it } != -1) {
