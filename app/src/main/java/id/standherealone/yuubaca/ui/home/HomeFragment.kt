@@ -23,7 +23,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
@@ -85,14 +84,14 @@ class HomeFragment : Fragment() {
         })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        val searchManager = getSystemService(AppCompatActivity.SEARCH_SERVICE) as SearchManager
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        requireActivity().menuInflater.inflate(R.menu.main_menu, menu)
+        val searchManager = requireActivity().getSystemService(AppCompatActivity.SEARCH_SERVICE) as SearchManager
         searchView = menu.findItem(R.id.action_search)
             .actionView as SearchView
         searchView.setSearchableInfo(
             searchManager
-                .getSearchableInfo(componentName)
+                .getSearchableInfo(requireActivity().componentName)
         )
         searchView.maxWidth = Int.MAX_VALUE
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -106,7 +105,7 @@ class HomeFragment : Fragment() {
                 return false
             }
         })
-        return true
+//        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -126,12 +125,12 @@ class HomeFragment : Fragment() {
         super.onPause()
     }
 
-    override fun onBackPressed() {
-        if (!searchView.isIconified) {
-            searchView.isIconified = true
-            return
-        }
-        super.onBackPressed()
-    }
+//    override fun onBackPressed() {
+//        if (!searchView.isIconified) {
+//            searchView.isIconified = true
+//            return
+//        }
+//        super.requireActivity().onBackPressed()
+//    }
 
 }
