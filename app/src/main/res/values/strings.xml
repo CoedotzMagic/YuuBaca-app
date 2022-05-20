@@ -86,4 +86,5 @@
     <string name="btn_selamatdatang">Mulai YuuBaca!</string>
     <string name="privacy_policy"><![CDATA[\nKebijakan Pengguna & Privasi]]></string>
     <string name="action_search">Search</string>
+    <string name="no_data_available">Data Kosong, Silahkan cek lagi nanti!</string>
 </resources>
