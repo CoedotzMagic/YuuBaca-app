@@ -63,13 +63,26 @@ class HomeFragment : Fragment() {
 //                if (response?.body() != null)
 //                    recyclerAdapter.setBukuListItems(response.body()!!)
 
-                bukuList = response!!.body()!!
-                Log.d("TAG", "Response = $bukuList")
-                recyclerAdapter.setBukuList(requireContext(), bukuList)
+                // check if data empty or not
 
-                //shimmer
-                shimmer!!.stopShimmer()
-                shimmer!!.visibility = View.GONE
+                if(response?.body()?.isEmpty() == true) { // if data null
+                    binding.recyclerview.visibility = View.GONE
+                    binding.emptyView.visibility = View.VISIBLE
+
+                    //shimmer
+                    shimmer!!.stopShimmer()
+                    shimmer!!.visibility = View.GONE
+                } else { // data not null
+                    binding.emptyView.visibility = View.GONE
+
+                    bukuList = response!!.body()!!
+                    Log.d("TAG", "Response = $bukuList")
+                    recyclerAdapter.setBukuList(requireContext(), bukuList)
+
+                    //shimmer
+                    shimmer!!.stopShimmer()
+                    shimmer!!.visibility = View.GONE
+                }
             }
 
             override fun onFailure(call: Call<List<Buku>>?, t: Throwable?) {
