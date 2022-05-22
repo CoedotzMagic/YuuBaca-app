@@ -7,122 +7,214 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8sp"
+        android:layout_margin="20sp"
         android:rowCount="4"
         android:columnCount="2">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_kategori_ipa"
-            android:layout_columnWeight="1"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            app:cardBackgroundColor="@color/cyan">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="7dp"
+            android:layout_gravity="center">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/ipa2">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="18dp">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="100dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ipa2" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:lines="2"
                     android:text="@string/kategori_ipa"
-                    android:textSize="24sp"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:textColor="@color/cyan"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_kategori_ips"
-            android:layout_columnWeight="1"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            app:cardBackgroundColor="@color/cyan">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            android:layout_margin="10sp"
+            app:cardElevation="7dp"
+            android:layout_gravity="center">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/ips">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="18dp">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="100dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ips" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:lines="2"
                     android:text="@string/kategori_ips"
-                    android:textSize="24sp"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:textColor="@color/cyan"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_kategori_sd"
-            android:layout_columnWeight="1"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            app:cardBackgroundColor="@color/cyan">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="7dp"
+            android:layout_gravity="center">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/sd">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="18dp">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="100dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/sd" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:lines="2"
                     android:text="@string/kategori_sd_mi"
-                    android:textSize="24sp"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:textColor="@color/cyan"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_kategori_smp"
-            android:layout_columnWeight="1"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            app:cardBackgroundColor="@color/cyan">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="7dp"
+            android:layout_gravity="center">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/smp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="18dp">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="100dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/smp" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:lines="2"
                     android:text="@string/kategori_smp_mts"
-                    android:textSize="24sp"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:textColor="@color/cyan"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_kategori_sma"
-            android:layout_columnWeight="1"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            app:cardBackgroundColor="@color/cyan">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="7dp"
+            android:layout_gravity="center">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/sma">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="18dp">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="100dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/sma" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:lines="2"
                     android:text="@string/kategori_sma_smk"
-                    android:textSize="24sp"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:textColor="@color/cyan"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
+
     </GridLayout>
 </ScrollView>
