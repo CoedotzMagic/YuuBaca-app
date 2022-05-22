@@ -45,9 +45,9 @@
                     android:gravity="center"
                     android:lines="2"
                     android:text="@string/kategori_ipa"
-                    android:textColor="@color/cyan"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    style="@style/text"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -86,9 +86,9 @@
                     android:gravity="center"
                     android:lines="2"
                     android:text="@string/kategori_ips"
-                    android:textColor="@color/cyan"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    style="@style/text"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -127,9 +127,9 @@
                     android:gravity="center"
                     android:lines="2"
                     android:text="@string/kategori_sd_mi"
-                    android:textColor="@color/cyan"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    style="@style/text"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -168,9 +168,9 @@
                     android:gravity="center"
                     android:lines="2"
                     android:text="@string/kategori_smp_mts"
-                    android:textColor="@color/cyan"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    style="@style/text"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -209,9 +209,9 @@
                     android:gravity="center"
                     android:lines="2"
                     android:text="@string/kategori_sma_smk"
-                    android:textColor="@color/cyan"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    style="@style/text"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
