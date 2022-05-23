@@ -1,11 +1,13 @@
 package id.standherealone.yuubaca.ui.detail
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 import id.standherealone.yuubaca.databinding.ActivityDetailBinding
+import id.standherealone.yuubaca.ui.baca.BacaActivity
 
 class DetailActivity : AppCompatActivity() {
 
@@ -38,7 +40,9 @@ class DetailActivity : AppCompatActivity() {
             .into(binding.thumbnail)
 
         binding.buttonBaca.setOnClickListener{
-            Toast.makeText(this, file, Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, BacaActivity::class.java)
+            intent.putExtra("file", file)
+            startActivity(intent)
         }
     }
 

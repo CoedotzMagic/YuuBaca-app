@@ -37,6 +37,7 @@
         <entry key="..\:/AndroidAppProjects/app/src/main/res/drawable/rounded2.xml" value="0.2965" />
         <entry key="..\:/AndroidAppProjects/app/src/main/res/drawable/settings_24.xml" value="0.2965" />
         <entry key="..\:/AndroidAppProjects/app/src/main/res/drawable/yuubaca_logo.xml" value="0.2965" />
+        <entry key="..\:/AndroidAppProjects/app/src/main/res/layout/activity_baca.xml" value="0.3625" />
         <entry key="..\:/AndroidAppProjects/app/src/main/res/layout/activity_main.xml" value="0.2078804347826087" />
         <entry key="..\:/AndroidAppProjects/app/src/main/res/layout/activity_splash.xml" value="0.3625" />
         <entry key="..\:/AndroidAppProjects/app/src/main/res/layout/download_fragment.xml" value="0.2078804347826087" />
@@ -53,7 +54,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
