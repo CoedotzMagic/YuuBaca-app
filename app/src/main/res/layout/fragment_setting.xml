@@ -14,7 +14,6 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackgroundDarker"
         android:clipToPadding="false"
         android:scrollbars="none"
         android:scrollingCache="true"
@@ -33,7 +32,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorBackground"
                 android:orientation="vertical">
 
                 <TextView
@@ -51,7 +49,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
-                    android:background="@color/colorSeparator" />
+                    style="@style/setting" />
 
                 <LinearLayout
                     android:id="@+id/lyt_term_policies"
@@ -85,7 +83,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
-                    android:background="@color/colorSeparator" />
+                    style="@style/setting" />
 
                 <LinearLayout
                     android:id="@+id/lyt_tell_friends"
@@ -119,7 +117,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
-                    android:background="@color/colorSeparator" />
+                    style="@style/setting" />
 
                 <LinearLayout
                     android:id="@+id/lyt_rate_this"
@@ -154,6 +152,11 @@
                         android:layout_weight="1" />
 
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    style="@style/setting" />
 
                 <LinearLayout
                     android:id="@+id/lyt_ver_app"
@@ -196,7 +199,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/spacing_large"
-                android:background="@color/colorBackgroundDarker" />
+                style="@style/setting" />
 
             <LinearLayout
                 android:layout_width="match_parent"
