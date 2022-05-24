@@ -49,7 +49,7 @@ class WelcomeToYuuBaca : AppCompatActivity() {
     var btnCheckPermissions: TextView? = null
     var permissionStatus: SharedPreferences? = null
     var sentToSettings = false
-    val VIDEO_NAME = "welcomevid_mobile.mp4"
+    val VIDEO_NAME = "welcomevid_mobilex.mp4"
     private var mVideoView: VideoView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
