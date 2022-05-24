@@ -22,7 +22,7 @@ class BukuAdapter(var context: Context) : RecyclerView.Adapter<BukuAdapter.MyVie
     var bukuListFiltered: List<Buku> = listOf()
 
     fun setBukuList(context: Context, bukuList: List<Buku>) {
-        this.context = context!!
+        this.context = context
         if (bukuList == null) {
             this.bukuList = bukuList
             this.bukuListFiltered = bukuList
@@ -141,7 +141,7 @@ class BukuAdapter(var context: Context) : RecyclerView.Adapter<BukuAdapter.MyVie
     }
 
     fun setBukuListItems(bukuList: List<Buku>) {
-        this.bukuList = bukuList;
+        this.bukuList = bukuList
         notifyDataSetChanged()
     }
 

@@ -77,8 +77,8 @@ class MainActivity : AppCompatActivity() {
 //            .apply()
 
         // OneSignal Initialization
-        OneSignal.initWithContext(this);
-        OneSignal.setAppId("3d588d2a-95be-4345-9b1c-bbfc4f44b69d");
+        OneSignal.initWithContext(this)
+        OneSignal.setAppId("3d588d2a-95be-4345-9b1c-bbfc4f44b69d")
 
     }
 
