@@ -8,9 +8,14 @@ import id.standherealone.yuubaca.R
 object PicassoClient {
     fun downloadImage(c: Context?, url: String?, img: ImageView?) {
         if (url != null && url.isNotEmpty()) {
-            Picasso.get().load(url).placeholder(R.mipmap.ic_launcher).into(img)
+            Picasso.get()
+                .load(url).placeholder(R.mipmap.ic_launcher)
+                .resize(500, 800)
+                .into(img)
         } else {
-            Picasso.get().load(R.mipmap.ic_launcher).into(img)
+            Picasso.get().load(R.mipmap.ic_launcher)
+                .resize(500, 800)
+                .into(img)
         }
     }
 }
