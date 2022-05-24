@@ -8,6 +8,7 @@ import com.mindev.mindev_pdfviewer.MindevPDFViewer
 import com.mindev.mindev_pdfviewer.PdfScope
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.databinding.ActivityBacaBinding
+import id.standherealone.yuubaca.databinding.ActivityDetailBinding
 
 
 class BacaActivity : AppCompatActivity() {
@@ -16,7 +17,9 @@ class BacaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_baca)
+
+        binding = ActivityBacaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //Get Intent
         val i = this.intent
