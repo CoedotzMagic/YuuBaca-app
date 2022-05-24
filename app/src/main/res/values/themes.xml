@@ -14,10 +14,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="background">
-        <item name="android:background">@color/white</item>
-    </style>
-
     <style name="navbar">
         <item name="android:background">@drawable/rounded</item>
     </style>

@@ -8,14 +8,6 @@
     <string name="title_settings">Pengaturan</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 
     <!-- Kategori List -->
     <string name="kategori_ipa">IPA</string>
@@ -30,39 +22,15 @@
 
     <!-- Settings -->
 
-    <string name="setting_title_notif">Push Notifikasi</string>
-    <string name="setting_title_ringtone">Nada Dering</string>
-    <string name="setting_title_vibrate">Getar</string>
-    <string name="setting_title_theme">Tema</string>
-    <string name="setting_title_enable_cache">Aktifkan Cache Gambar</string>
-    <string name="setting_title_cache">Hapus Cache Gambar</string>
-    <string name="ringtone_default">Default</string>
-    <string name="email_copied">Email Disalin ke Clipboard</string>
-    <string name="dialog_confirm_title">Konfirmasi</string>
-    <string name="message_clear_image_cache">Anda yakin ingin menghapus cache gambar?</string>
-    <string name="message_after_clear_image_cache">cache gambar berhasil dihapus</string>
-    <string name="setting_group_notif">Notifikasi</string>
-    <string name="setting_group_display">Tampilan</string>
     <string name="setting_group_others">Lainnya</string>
-    <string name="setting_title_copyright">Copyright</string>
-    <string name="setting_title_contact_us">Kontak Kami</string>
     <string name="setting_title_build">Versi Aplikasi</string>
     <string name="setting_title_term">Kebijakan Privasi</string>
     <string name="setting_title_rate">Berikan Rating</string>
     <string name="feedback_title">Feedback &amp; Saran</string>
     <string name="report_problem">Laporkan Masalah / Feedback &amp; Saran</string>
-    <string name="app_version"> </string>
     <string name="version_unknown">Tidak Diketahui</string>
-    <string name="OK">OK</string>
-    <string name="CANCEL">Batal</string>
     <string name="setting_title_friends">Beritahu Teman</string>
     <string name="about_app"><![CDATA[Azriel, Wiko & Coedotz\nYuuBaca ©2022]]></string>
-    <string name="share_text">Baca buku perpustakaan gratis dan lengkap hanya di YuuBaca!\n\nUnduh Sekarang!http://play.google.com/store/apps/details?id=id.standherealone.yuubaca</string>
-    <string-array name="themes">
-        <item>Cerah</item>
-        <item>Gelap</item>
-        <item>Otomatis</item>
-    </string-array>
 
     <!-- Feedback -->
     <string name="file_name_device_info" translatable="false">deviceInf.txt</string>
@@ -83,7 +51,6 @@
     <string name="info_fedback_legal_log_data">"log data "</string>
     <string name="info_fedback_legal_will_be_sent">akan dikirim ke %s</string>
     <string name="permissionsgambar">Anda harus mengizinkan akses ke kartu SD untuk memilih gambar.</string>
-    <string name="btn_selamatdatang">Mulai YuuBaca!</string>
     <string name="privacy_policy"><![CDATA[\nKebijakan Pengguna & Privasi]]></string>
     <string name="action_search">Search</string>
     <string name="no_data_available">Data Kosong, Silahkan cek lagi nanti!</string>

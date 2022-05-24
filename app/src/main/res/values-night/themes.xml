@@ -15,10 +15,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="background">
-        <item name="android:background">@color/grey</item>
-    </style>
-
     <style name="navbar">
         <item name="android:background">@drawable/roundedd</item>
     </style>
