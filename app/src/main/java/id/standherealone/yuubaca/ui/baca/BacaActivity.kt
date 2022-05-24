@@ -1,12 +1,17 @@
 package id.standherealone.yuubaca.ui.baca
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.mindev.mindev_pdfviewer.MindevPDFViewer
 import com.mindev.mindev_pdfviewer.PdfScope
+import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.databinding.ActivityBacaBinding
+import id.standherealone.yuubaca.ui.WelcomeToYuuBaca
 
 class BacaActivity : AppCompatActivity() {
 
@@ -35,6 +40,22 @@ class BacaActivity : AppCompatActivity() {
             binding.pdf.initializePDFDownloader(file, statusListener)
         }
         lifecycle.addObserver(PdfScope())
+
+        // first run for attention
+        val firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrunbuku", true)
+        if (firstrun) {
+            AlertDialog.Builder(this)
+                .setTitle(R.string.title_baca_firstrun)
+                .setMessage(R.string.isi_baca_firstrun)
+                .setCancelable(false)
+                .setPositiveButton("OK"
+                ) { _: DialogInterface?, _: Int -> }
+                .show()
+        }
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+            .edit()
+            .putBoolean("firstrunbuku", false)
+            .apply()
     }
 
     private val statusListener = object : MindevPDFViewer.MindevViewerStatusListener {
