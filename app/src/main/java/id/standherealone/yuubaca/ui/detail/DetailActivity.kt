@@ -3,7 +3,6 @@ package id.standherealone.yuubaca.ui.detail
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 import id.standherealone.yuubaca.databinding.ActivityDetailBinding
@@ -19,6 +18,9 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
         //GET INTENT
         val i = this.intent
 
@@ -29,6 +31,9 @@ class DetailActivity : AppCompatActivity() {
         val sipnosis = i.extras!!.getString("sipnosis")
         val file = i.extras!!.getString("file")
 
+        // Set title bar
+        title = name
+
         //BIND DATA
         binding.thumbnail.setImageURI(Uri.parse(images))
         binding.title.text = name
@@ -36,7 +41,8 @@ class DetailActivity : AppCompatActivity() {
         binding.descbook.text = sipnosis
 
         Picasso.get()
-            .load(images) //.resize(1200, 800)                     // optional
+            .load(images)
+            .resize(600, 900)
             .into(binding.thumbnail)
 
         binding.buttonBaca.setOnClickListener{
@@ -44,6 +50,11 @@ class DetailActivity : AppCompatActivity() {
             intent.putExtra("file", file)
             startActivity(intent)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 
     override fun onBackPressed() {
