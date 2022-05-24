@@ -47,6 +47,9 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.category.CategoryIPAActivity"
             android:label="IPA"
             android:screenOrientation="portrait" />

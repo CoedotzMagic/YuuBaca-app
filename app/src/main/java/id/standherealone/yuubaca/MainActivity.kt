@@ -2,7 +2,6 @@ package id.standherealone.yuubaca
 
 import android.app.AlertDialog
 import android.content.DialogInterface
-import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.widget.Toast
@@ -11,21 +10,36 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.onesignal.OneSignal
 import id.standherealone.yuubaca.databinding.ActivityMainBinding
-import id.standherealone.yuubaca.ui.WelcomeToYuuBaca
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    lateinit var mGoogleSignInClient: GoogleSignInClient
+
+    private val auth by lazy {
+        FirebaseAuth.getInstance()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        mGoogleSignInClient= GoogleSignIn.getClient(this,gso)
 
         val navView: BottomNavigationView = binding.navView
 
@@ -52,15 +66,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         // first run for handling premissions
-        val firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true)
-        if (firstrun) {
-            val i = Intent(this@MainActivity, WelcomeToYuuBaca::class.java)
-            startActivity(i)
-        }
-        getSharedPreferences("PREFERENCE", MODE_PRIVATE)
-            .edit()
-            .putBoolean("firstrun", false)
-            .apply()
+//        val firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true)
+//        if (firstrun) {
+//            val i = Intent(this@MainActivity, WelcomeToYuuBaca::class.java)
+//            startActivity(i)
+//        }
+//        getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+//            .edit()
+//            .putBoolean("firstrun", false)
+//            .apply()
 
         // OneSignal Initialization
         OneSignal.initWithContext(this);
