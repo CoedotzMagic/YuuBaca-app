@@ -49,7 +49,7 @@ class WelcomeToYuuBaca : AppCompatActivity() {
     var btnCheckPermissions: TextView? = null
     var permissionStatus: SharedPreferences? = null
     var sentToSettings = false
-    val VIDEO_NAME = "welcomevid_mobilex.mp4"
+    val VIDEO_NAME = "welcomevid_mobile.mp4"
     private var mVideoView: VideoView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -354,7 +354,7 @@ class WelcomeToYuuBaca : AppCompatActivity() {
         try {
             val fos =
                 openFileOutput(VIDEO_NAME, MODE_PRIVATE)
-            val `in` = resources.openRawResource(R.raw.welcomevid_mobilex)
+            val `in` = resources.openRawResource(R.raw.welcomevid_mobile)
             val buff = ByteArray(1024)
             var len = 0
             while (`in`.read(buff).also { len = it } != -1) {
