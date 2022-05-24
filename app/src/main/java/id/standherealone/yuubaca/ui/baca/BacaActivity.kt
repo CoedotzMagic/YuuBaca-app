@@ -21,11 +21,18 @@ class BacaActivity : AppCompatActivity() {
         binding = ActivityBacaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
         //Get Intent
         val i = this.intent
 
         //Receive Data
         val file = i.extras!!.getString("file")
+        val name = i.extras!!.getString("title")
+
+        // title bar
+        title = "Baca Buku: $name"
 
         if (file != null) {
             binding.pdf.initializePDFDownloader(file, statusListener)
@@ -52,6 +59,14 @@ class BacaActivity : AppCompatActivity() {
 
         override fun unsupportedDevice() {
         }
+    }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        this.finish()
     }
 }

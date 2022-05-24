@@ -48,6 +48,7 @@ class DetailActivity : AppCompatActivity() {
         binding.buttonBaca.setOnClickListener{
             val intent = Intent(this, BacaActivity::class.java)
             intent.putExtra("file", file)
+            intent.putExtra("title", name)
             startActivity(intent)
         }
     }

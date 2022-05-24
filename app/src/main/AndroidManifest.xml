@@ -35,9 +35,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YuuBaca">
         <activity
-            android:name=".ui.baca.BacaActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -78,6 +75,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.WelcomeToYuuBaca"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.baca.BacaActivity"
             android:screenOrientation="portrait" />
 
         <meta-data
