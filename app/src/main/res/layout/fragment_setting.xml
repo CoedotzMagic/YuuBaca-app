@@ -75,8 +75,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
                         android:text="@string/setting_title_term"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/colorTextAction" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                 </LinearLayout>
 
@@ -109,8 +108,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
                         android:text="@string/setting_title_friends"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/colorTextAction" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                 </LinearLayout>
 
@@ -143,8 +141,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
                         android:text="@string/setting_title_rate"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/colorTextAction" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                     <View
                         android:layout_width="0dp"
@@ -176,8 +173,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
                         android:text="@string/setting_title_build"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/colorTextAction" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                     <View
                         android:layout_width="0dp"
@@ -233,8 +229,7 @@
                     android:paddingLeft="10dp"
                     android:gravity="center"
                     android:text="@string/about_app"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/colorTextAction" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                 <!-- -->
 

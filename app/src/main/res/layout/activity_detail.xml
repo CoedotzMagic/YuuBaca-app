@@ -32,10 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:lines="2"
             android:text="IPA BIOLOGI"
-            android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
@@ -45,21 +43,19 @@
             android:gravity="center"
             android:lines="1"
             android:text="TIM ABDI GURU"
-            android:textColor="@color/grey"
-            android:textSize="12sp"
+            android:textSize="22sp"
             android:paddingBottom="16dp"/>
 
         <TextView
             android:id="@+id/descbook"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/author"
             android:maxLines="3"
-            android:textColor="@color/grey"
             android:padding="8dp"
             android:text="Sipnosis"
-            android:textSize="14dp"
-            android:layout_gravity="center"/>
+            android:textSize="16dp"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/isbn"

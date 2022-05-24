@@ -58,7 +58,6 @@
                 android:gravity="center"
                 android:lines="1"
                 android:text="TIM ABDI GURU"
-                android:textColor="@color/grey"
                 android:textSize="12sp"
                 android:paddingBottom="16dp"/>
 
