@@ -1,16 +1,12 @@
 package id.standherealone.yuubaca.core.components
 
-import android.os.Build
 import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.content.Context
 import android.content.pm.PackageInfo
-import android.telephony.TelephonyManager
 import android.content.pm.PackageManager
 import android.content.res.Configuration
-import android.util.Log
-import java.lang.Exception
-import java.lang.StringBuilder
+import android.os.Build
 import java.util.*
 
 object DeviceInfo {

@@ -1,7 +1,6 @@
 package id.standherealone.yuubaca.ui.category
 
 import android.app.SearchManager
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -10,12 +9,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.material.snackbar.Snackbar
 import id.standherealone.yuubaca.R
-import id.standherealone.yuubaca.api.*
+import id.standherealone.yuubaca.api.ApiSMP
 import id.standherealone.yuubaca.core.adapter.BukuAdapter
 import id.standherealone.yuubaca.databinding.ActivityRecyclerviewBinding
 import id.standherealone.yuubaca.model.Buku

@@ -81,9 +81,6 @@
             android:label="@string/feedback_title"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.WelcomeToYuuBaca"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ui.baca.BacaActivity" />
 
         <meta-data

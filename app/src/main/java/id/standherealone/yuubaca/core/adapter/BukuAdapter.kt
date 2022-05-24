@@ -11,8 +11,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.core.PicassoClient
 import id.standherealone.yuubaca.model.Buku

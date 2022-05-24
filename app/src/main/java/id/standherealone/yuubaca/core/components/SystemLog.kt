@@ -4,7 +4,6 @@ import android.os.Process
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
-import java.lang.StringBuilder
 
 object SystemLog {
     fun extractLogToString(): String {

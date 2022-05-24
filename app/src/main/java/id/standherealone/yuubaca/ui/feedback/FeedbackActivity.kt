@@ -1,42 +1,36 @@
 package id.standherealone.yuubaca.ui.feedback
 
 import android.Manifest
-import id.standherealone.yuubaca.core.components.SystemLog.extractLogToString
-import id.standherealone.yuubaca.core.components.DeviceInfo.getAllDeviceInfo
-import androidx.appcompat.app.AppCompatActivity
-import id.standherealone.yuubaca.core.components.SystemLog
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
-import id.standherealone.yuubaca.R
-import id.standherealone.yuubaca.ui.feedback.FeedbackActivity
-import id.standherealone.yuubaca.core.components.DeviceInfo
+import android.os.StrictMode
+import android.os.StrictMode.VmPolicy
+import android.provider.Settings
 import android.text.SpannableString
-import android.text.style.ClickableSpan
 import android.text.Spanned
 import android.text.TextUtils
 import android.text.method.LinkMovementMethod
-import android.os.StrictMode.VmPolicy
-import android.os.StrictMode
-import android.os.Build
-import android.content.pm.PackageManager
-import android.content.Intent
-import android.app.Activity
-import android.app.AlertDialog
-import android.content.DialogInterface
-import android.net.Uri
-import android.provider.Settings
+import android.text.style.ClickableSpan
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import id.standherealone.yuubaca.R
+import id.standherealone.yuubaca.core.components.DeviceInfo.getAllDeviceInfo
+import id.standherealone.yuubaca.core.components.SystemLog.extractLogToString
 import id.standherealone.yuubaca.core.components.Utils
 import id.standherealone.yuubaca.databinding.ActivityFeedbackBinding
-import id.standherealone.yuubaca.databinding.ActivityMainBinding
 import java.io.BufferedWriter
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
-import java.util.ArrayList
 
 class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityFeedbackBinding
