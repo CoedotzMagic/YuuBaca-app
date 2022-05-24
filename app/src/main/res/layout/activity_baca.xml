@@ -8,13 +8,15 @@
 
     <TextView
         android:id="@+id/tv_pages"
-        android:gravity="center_horizontal"
-        android:layout_margin="20sp"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:textColor="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginBottom="20sp"
+        android:gravity="center_horizontal"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <com.mindev.mindev_pdfviewer.MindevPDFViewer
         android:id="@+id/pdf"
@@ -22,7 +24,7 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:pdf_animation="true"
-        app:pdf_direction="horizontal" />
+        app:pdf_direction="vertical" />
 
     <ProgressBar
         android:id="@+id/pb_loading"

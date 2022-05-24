@@ -2,14 +2,11 @@ package id.standherealone.yuubaca.ui.baca
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.mindev.mindev_pdfviewer.MindevPDFViewer
 import com.mindev.mindev_pdfviewer.PdfScope
-import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.databinding.ActivityBacaBinding
-import id.standherealone.yuubaca.databinding.ActivityDetailBinding
-
 
 class BacaActivity : AppCompatActivity() {
 
@@ -42,23 +39,44 @@ class BacaActivity : AppCompatActivity() {
 
     private val statusListener = object : MindevPDFViewer.MindevViewerStatusListener {
         override fun onStartDownload() {
+            binding.tvPages.text = "memuat buku"
         }
 
         override fun onPageChanged(position: Int, total: Int) {
+            binding.tvPages.text = "${position + 1} / $total"
         }
 
         override fun onProgressDownload(currentStatus: Int) {
+            binding.tvPages.text = "memuat buku : $currentStatus %"
         }
 
         override fun onSuccessDownLoad(path: String) {
             binding.pdf.fileInit(path)
+            binding.pbLoading.visibility = View.GONE
         }
 
         override fun onFail(error: Throwable) {
+            val snackbar = Snackbar.make(
+                findViewById(android.R.id.content),
+                "Tidak Dapat Memuat Buku, Silahkan coba lagi nanti dan pastikan terhubung koneksi internet!",
+                Snackbar.LENGTH_LONG
+            )
+            snackbar.show()
         }
 
         override fun unsupportedDevice() {
+            val snackbar = Snackbar.make(
+                findViewById(android.R.id.content),
+                "Tidak Dapat Memuat Buku, Karena Perangkat Tidak Didukung!",
+                Snackbar.LENGTH_LONG
+            )
+            snackbar.show()
         }
+    }
+
+    override fun onDestroy() {
+        binding.pdf.pdfRendererCore?.clear()
+        super.onDestroy()
     }
 
     override fun onSupportNavigateUp(): Boolean {
