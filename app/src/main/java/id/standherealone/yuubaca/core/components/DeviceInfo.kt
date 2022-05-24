@@ -49,10 +49,6 @@ object DeviceInfo {
             """
  Tipe Perangkat: ${getDeviceInfo(context, Device.DEVICE_TYPE)}"""
         )
-        stringBuilder.append(
-            """
- Tipe Data: ${getDataType(context)}"""
-        )
         return stringBuilder.toString()
     }
 
@@ -152,30 +148,6 @@ object DeviceInfo {
         } catch (e: Exception) {
             false
         }
-    }
-
-    fun getDataType(activity: Context): String {
-        var type = "Mobile Data"
-        val tm = activity.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-        when (tm.networkType) {
-            TelephonyManager.NETWORK_TYPE_HSDPA -> {
-                type = "Mobile Data 3G"
-                Log.d("Type", "3g")
-            }
-            TelephonyManager.NETWORK_TYPE_HSPAP -> {
-                type = "Mobile Data 4G"
-                Log.d("Type", "4g")
-            }
-            TelephonyManager.NETWORK_TYPE_GPRS -> {
-                type = "Mobile Data GPRS"
-                Log.d("Type", "GPRS")
-            }
-            TelephonyManager.NETWORK_TYPE_EDGE -> {
-                type = "Mobile Data EDGE 2G"
-                Log.d("Type", "EDGE 2g")
-            }
-        }
-        return type
     }
 
     fun getAppVersion(context: Context): String {
