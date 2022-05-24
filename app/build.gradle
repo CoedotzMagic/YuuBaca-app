@@ -27,11 +27,23 @@ android {
     // Keystore : YuuBaca / yuubacaapp - hahahihi
 
     buildTypes {
-        release {
-            minifyEnabled false
+        debug {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexEnabled true
+        }
+        release {
+            shrinkResources true
+            debuggable false
+            zipAlignEnabled true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexEnabled = true
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
