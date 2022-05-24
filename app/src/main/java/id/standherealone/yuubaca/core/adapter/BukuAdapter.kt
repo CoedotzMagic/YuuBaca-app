@@ -67,8 +67,8 @@ class BukuAdapter(var context: Context) : RecyclerView.Adapter<BukuAdapter.MyVie
 
     override fun onBindViewHolder(holder: BukuAdapter.MyViewHolder, position: Int) {
         holder.titleBook!!.text = bukuListFiltered.get(position).judul
-        Glide.with(context).load(bukuListFiltered.get(position).gambar)
-            .apply(RequestOptions.centerCropTransform()).into(holder.image!!)
+//        Glide.with(context).load(bukuListFiltered.get(position).gambar)
+//            .apply(RequestOptions.centerCropTransform()).into(holder.image!!)
 
         val buku: Buku = bukuListFiltered.get(position)
 

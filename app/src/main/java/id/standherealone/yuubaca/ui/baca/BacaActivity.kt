@@ -2,7 +2,6 @@ package id.standherealone.yuubaca.ui.baca
 
 import android.app.AlertDialog
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +10,6 @@ import com.mindev.mindev_pdfviewer.MindevPDFViewer
 import com.mindev.mindev_pdfviewer.PdfScope
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.databinding.ActivityBacaBinding
-import id.standherealone.yuubaca.ui.WelcomeToYuuBaca
 
 class BacaActivity : AppCompatActivity() {
 
