@@ -49,8 +49,6 @@ class WelcomeToYuuBaca : AppCompatActivity() {
     var btnCheckPermissions: TextView? = null
     var permissionStatus: SharedPreferences? = null
     var sentToSettings = false
-    val VIDEO_NAME = "welcomevid_mobile.mp4"
-    private var mVideoView: VideoView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,14 +72,6 @@ class WelcomeToYuuBaca : AppCompatActivity() {
                 )
             )
         }
-
-        mVideoView = binding.videoView
-
-        var videoFile = getFileStreamPath(VIDEO_NAME)
-        if (!videoFile.exists()) {
-            videoFile = copyVideoFile()
-        }
-        playVideo(videoFile)
 
         val selamatdatang: Boolean =
             getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).getBoolean(
@@ -339,42 +329,4 @@ class WelcomeToYuuBaca : AppCompatActivity() {
             }
         }
     }
-
-    // Video Layout
-    private fun playVideo(videoFile: File) {
-        mVideoView!!.setVideoPath(videoFile.path)
-        mVideoView!!.layoutParams = RelativeLayout.LayoutParams(-1, -1)
-        mVideoView!!.setOnPreparedListener { mediaPlayer ->
-            mediaPlayer.isLooping = true
-            mediaPlayer.start()
-        }
-    }
-
-    private fun copyVideoFile(): File {
-        try {
-            val fos =
-                openFileOutput(VIDEO_NAME, MODE_PRIVATE)
-            val `in` = resources.openRawResource(R.raw.welcomevid_mobile)
-            val buff = ByteArray(1024)
-            var len = 0
-            while (`in`.read(buff).also { len = it } != -1) {
-                fos.write(buff, 0, len)
-            }
-        } catch (e: FileNotFoundException) {
-            e.printStackTrace()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        val videoFile: File = getFileStreamPath(VIDEO_NAME)
-        if (!videoFile.exists()) throw RuntimeException("Tidak Dapat Memutar Video")
-        return videoFile
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mVideoView!!.stopPlayback()
-    }
-
-    // Video Layout
-
 }
