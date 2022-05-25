@@ -37,6 +37,9 @@ class CategoryUMUMActivity : AppCompatActivity() {
         binding = ActivityRecyclerviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
         recyclerView = findViewById(R.id.recyclerview)
         shimmer = binding.shimmerHome
         recyclerAdapter = BukuAdapter(this)
@@ -127,6 +130,11 @@ class CategoryUMUMActivity : AppCompatActivity() {
     override fun onPause() {
         shimmer!!.stopShimmer()
         super.onPause()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 
     override fun onBackPressed() {
