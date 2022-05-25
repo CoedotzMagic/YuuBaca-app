@@ -58,6 +58,12 @@ class CategoryFragment : Fragment() {
             val sma = Intent(context, CategorySMAActivity::class.java)
             startActivity(sma)
         }
+
+        // Binding Umum
+        binding.btnKategoriUmum.setOnClickListener {
+            val umum = Intent(context, CategoryUMUMActivity::class.java)
+            startActivity(umum)
+        }
     }
 
 }
