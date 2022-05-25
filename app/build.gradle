@@ -85,6 +85,9 @@ dependencies {
     //Pdf Viewer
     implementation 'com.github.mkw8263:MindevPDFViewer:1.0.4'
 
+    //brush image
+    implementation 'com.flaviofaria:kenburnsview:1.0.7'
+
     //Onesignal Notification
 //    implementation 'com.onesignal:OneSignal:3.11.1'
     implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
