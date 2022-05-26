@@ -23,11 +23,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    lateinit var mGoogleSignInClient: GoogleSignInClient
-
-    private val auth by lazy {
-        FirebaseAuth.getInstance()
-    }
+//    lateinit var mGoogleSignInClient: GoogleSignInClient
+//
+//    private val auth by lazy {
+//        FirebaseAuth.getInstance()
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-        mGoogleSignInClient= GoogleSignIn.getClient(this,gso)
+//        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestIdToken(getString(R.string.default_web_client_id))
+//            .requestEmail()
+//            .build()
+//        mGoogleSignInClient= GoogleSignIn.getClient(this,gso)
 
         val navView: BottomNavigationView = binding.navView
 
