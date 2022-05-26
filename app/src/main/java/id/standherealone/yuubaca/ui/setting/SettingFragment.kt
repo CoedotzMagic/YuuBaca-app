@@ -67,6 +67,15 @@ class SettingFragment : Fragment() {
             )
         }
 
+        binding.lytOpensource.setOnClickListener {
+            requireActivity().startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://github.com/luckytruedev/YuuBaca-app")
+                )
+            )
+        }
+
         binding.buildVersion.text = BuildConfig.VERSION_NAME
 
         binding.btnReport.setOnClickListener {

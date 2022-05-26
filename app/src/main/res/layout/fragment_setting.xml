@@ -156,6 +156,38 @@
                     style="@style/setting" />
 
                 <LinearLayout
+                    android:id="@+id/lyt_opensource"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/spacing_xxlarge"
+                    android:onClick="onClickLayout"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/spacing_mlarge"
+                    android:paddingRight="@dimen/spacing_mlarge">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="@string/app_opensource"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    style="@style/setting" />
+
+                <LinearLayout
                     android:id="@+id/lyt_ver_app"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
