@@ -57,4 +57,5 @@
     <string name="title_baca_firstrun">Terimakasih Telah Mengunduh Aplikasi YuuBaca!</string>
     <string name="isi_baca_firstrun">Geser Keatas dan Kebawah untuk membaca buku.\n\nTap 2x untuk zoom atau punch in dan out untuk memperkecil dan memperbesar bacaan.</string>
     <string name="kategori_umum">UMUM</string>
+    <string name="app_opensource">YuuBaca Github Open Source</string>
 </resources>
