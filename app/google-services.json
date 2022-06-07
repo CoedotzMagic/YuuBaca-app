@@ -14,7 +14,23 @@
       },
       "oauth_client": [
         {
-          "client_id": "455430537663-64j36b5jg0d9c8g7ji608is8f9n337fp.apps.googleusercontent.com",
+          "client_id": "455430537663-38o7uafdktb6bhdlcac78flaaj1e9fd7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.standherealone.yuubaca",
+            "certificate_hash": "5a371ead24b5c02ae04e807e208bb26937ebaa20"
+          }
+        },
+        {
+          "client_id": "455430537663-qbgb5rvcht9g16gmh3emjeqhbpmq2lj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.standherealone.yuubaca",
+            "certificate_hash": "7b945ab47fedcb6203d3e9c64a73c314cf2474f0"
+          }
+        },
+        {
+          "client_id": "455430537663-soj4epntmd7aob3gi7mqv5edgmnbbb5b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "id.standherealone.yuubaca",
