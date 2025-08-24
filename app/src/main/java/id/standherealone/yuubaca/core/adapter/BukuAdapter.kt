@@ -1,5 +1,6 @@
 package id.standherealone.yuubaca.core.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -133,6 +134,7 @@ class BukuAdapter(var context: Context) : RecyclerView.Adapter<BukuAdapter.MyVie
                 return filterResults
             }
 
+            @SuppressLint("NotifyDataSetChanged")
             override fun publishResults(charSequence: CharSequence, filterResults: FilterResults) {
                 bukuListFiltered = filterResults.values as ArrayList<Buku>
                 notifyDataSetChanged()
@@ -140,6 +142,7 @@ class BukuAdapter(var context: Context) : RecyclerView.Adapter<BukuAdapter.MyVie
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setBukuListItems(bukuList: List<Buku>) {
         this.bukuList = bukuList
         notifyDataSetChanged()
