@@ -89,7 +89,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:24.0.1")
     implementation("com.google.firebase:firebase-crashlytics-ktx:19.4.4")
     implementation("com.google.firebase:firebase-config-ktx:22.1.2")
-    implementation("com.google.firebase:firebase-perf-ktx")
+    implementation("com.google.firebase:firebase-perf-ktx:21.0.5")
     implementation("com.google.android.gms:play-services-auth:21.4.0")
 
     // Retrofit & Picasso
