@@ -16,6 +16,7 @@ import android.provider.MediaStore
 import android.util.TypedValue
 import androidx.annotation.ColorInt
 import java.util.*
+import androidx.core.net.toUri
 
 object Utils {
     /**
@@ -29,7 +30,7 @@ object Utils {
      */
     @SuppressLint("NewApi")
     fun getPath(context: Context, uri: Uri): String? {
-        val isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
+        val isKitKat = true
 
         // DocumentProvider
         if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
@@ -46,7 +47,7 @@ object Utils {
             } else if (isDownloadsDocument(uri)) {
                 val id = DocumentsContract.getDocumentId(uri)
                 val contentUri = ContentUris.withAppendedId(
-                    Uri.parse("content://downloads/public_downloads"), java.lang.Long.valueOf(id)
+                    "content://downloads/public_downloads".toUri(), java.lang.Long.valueOf(id)
                 )
                 return getDataColumn(
                     context,
@@ -178,6 +179,7 @@ object Utils {
         return inSampleSize
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     fun createEmailOnlyChooserIntent(
         context: Context, source: Intent?,
         chooserTitle: CharSequence?
@@ -186,7 +188,7 @@ object Utils {
         val i = Intent(
             Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto",
-                "luckytrue4dev@gmail.com, bekasiguide@luckytruedev.com, apps@luckytruedev.com", null
+                "reporter@coedotzmagic.com", null
             )
         )
         val activities = context.packageManager

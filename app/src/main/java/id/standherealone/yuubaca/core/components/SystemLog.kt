@@ -15,7 +15,7 @@ object SystemLog {
             val reader = BufferedReader(InputStreamReader(process.inputStream))
             var currentLine: String?
             while (reader.readLine().also { currentLine = it } != null) {
-                if (currentLine != null && currentLine!!.contains(pid.toString())) {
+                if (currentLine != null && currentLine.contains(pid.toString())) {
                     result.append(currentLine)
                     result.append("\n")
                 }
