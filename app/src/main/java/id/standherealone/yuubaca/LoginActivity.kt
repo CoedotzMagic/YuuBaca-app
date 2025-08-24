@@ -71,7 +71,7 @@ class LoginActivity: AppCompatActivity() {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    "https://luckytruedev.com/privacy_policy.html".toUri()
+                    "https://coedotzmagic.com/privacy_policy".toUri()
                 )
             )
         }
