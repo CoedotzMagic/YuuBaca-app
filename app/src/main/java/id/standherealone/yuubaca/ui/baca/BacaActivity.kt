@@ -4,12 +4,14 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.mindev.mindev_pdfviewer.MindevPDFViewer
 import com.mindev.mindev_pdfviewer.PdfScope
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.databinding.ActivityBacaBinding
+import androidx.core.content.edit
 
 class BacaActivity : AppCompatActivity() {
 
@@ -51,9 +53,13 @@ class BacaActivity : AppCompatActivity() {
                 .show()
         }
         getSharedPreferences("PREFERENCE", MODE_PRIVATE)
-            .edit()
-            .putBoolean("firstrunbuku", false)
-            .apply()
+            .edit {
+                putBoolean("firstrunbuku", false)
+            }
+
+        onBackPressedDispatcher.addCallback(this) {
+            finish()
+        }
     }
 
     private val statusListener = object : MindevPDFViewer.MindevViewerStatusListener {
@@ -99,11 +105,7 @@ class BacaActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        onBackPressedDispatcher.onBackPressed()
         return super.onSupportNavigateUp()
-    }
-
-    override fun onBackPressed() {
-        this.finish()
     }
 }

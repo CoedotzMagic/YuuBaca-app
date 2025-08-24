@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import id.standherealone.yuubaca.databinding.FragmentFavoriteBinding
 
+@Suppress("DEPRECATION")
 class FavoriteFragment : Fragment() {
 
     private lateinit var binding: FragmentFavoriteBinding

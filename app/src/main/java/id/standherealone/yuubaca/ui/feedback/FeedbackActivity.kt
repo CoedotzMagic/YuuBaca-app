@@ -19,6 +19,7 @@ import android.text.style.ClickableSpan
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
@@ -31,7 +32,9 @@ import java.io.BufferedWriter
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
+import androidx.core.net.toUri
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityFeedbackBinding
 
@@ -55,6 +58,10 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
 
         if (supportActionBar != null) supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         init()
+
+        onBackPressedDispatcher.addCallback(this) {
+            finish()
+        }
     }
 
     private fun init() {
@@ -112,21 +119,16 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
     fun selectImage() {
         val builder = VmPolicy.Builder()
         StrictMode.setVmPolicy(builder.build())
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val hasWriteContactsPermission =
-                checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-            if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(
-                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                    REQUEST_PERMISSIONS
-                )
-                return
-            } else  //already granted
-                selectPicture()
-        } else {
-            //normal process
+        val hasWriteContactsPermission =
+            checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+        if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(
+                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                REQUEST_PERMISSIONS
+            )
+            return
+        } else  //already granted
             selectPicture()
-        }
     }
 
     private fun selectPicture() {
@@ -176,7 +178,7 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
     private fun goToSettings() {
         val myAppSettings = Intent(
             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-            Uri.parse("package:$packageName")
+            "package:$packageName".toUri()
         )
         myAppSettings.addCategory(Intent.CATEGORY_DEFAULT)
         myAppSettings.flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -299,10 +301,6 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
 
     val appLabel: String
         get() = resources.getString(R.string.app_name)
-
-    override fun onBackPressed() {
-        finish()
-    }
 
     companion object {
         const val KEY_WITH_INFO = "with_info"

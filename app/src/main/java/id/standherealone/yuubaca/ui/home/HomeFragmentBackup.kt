@@ -21,7 +21,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
+@Suppress("DEPRECATION", "WRONG_NULLABILITY_FOR_JAVA_OVERRIDE")
 class HomeFragmentBackup : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding

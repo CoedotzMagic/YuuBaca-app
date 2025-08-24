@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
@@ -21,6 +22,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+@Suppress("WRONG_NULLABILITY_FOR_JAVA_OVERRIDE")
 class CategorySMAActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecyclerviewBinding
@@ -89,6 +91,15 @@ class CategorySMAActivity : AppCompatActivity() {
 
             }
         })
+
+        onBackPressedDispatcher.addCallback(this) {
+            if (::searchView.isInitialized && !searchView.isIconified) {
+                searchView.isIconified = true
+            } else {
+                isEnabled = false
+                onBackPressedDispatcher.onBackPressed()
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -133,16 +144,7 @@ class CategorySMAActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        onBackPressedDispatcher.onBackPressed()
         return super.onSupportNavigateUp()
     }
-
-    override fun onBackPressed() {
-        if (!searchView.isIconified) {
-            searchView.isIconified = true
-            return
-        }
-        super.onBackPressed()
-    }
-
 }

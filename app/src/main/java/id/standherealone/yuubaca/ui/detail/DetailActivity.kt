@@ -3,10 +3,12 @@ package id.standherealone.yuubaca.ui.detail
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 import id.standherealone.yuubaca.databinding.ActivityDetailBinding
 import id.standherealone.yuubaca.ui.baca.BacaActivity
+import androidx.core.net.toUri
 
 class DetailActivity : AppCompatActivity() {
 
@@ -35,7 +37,7 @@ class DetailActivity : AppCompatActivity() {
         title = name
 
         //BIND DATA
-        binding.thumbnail.setImageURI(Uri.parse(images))
+        binding.thumbnail.setImageURI(images?.toUri())
         binding.title.text = name
         binding.author.text = author
         binding.descbook.text = sipnosis
@@ -51,16 +53,14 @@ class DetailActivity : AppCompatActivity() {
             intent.putExtra("title", name)
             startActivity(intent)
         }
+
+        onBackPressedDispatcher.addCallback(this) {
+            finish()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        onBackPressedDispatcher.onBackPressed()
         return super.onSupportNavigateUp()
-    }
-
-    override fun onBackPressed() {
-        // disini gw harus balikin lagi datanya & pake putextra
-        // biar pas balik2 datanya masih ada, karena passing data
-        this.finish()
     }
 }

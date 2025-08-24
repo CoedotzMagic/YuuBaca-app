@@ -23,6 +23,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+@Suppress("DEPRECATION", "WRONG_NULLABILITY_FOR_JAVA_OVERRIDE")
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
@@ -89,14 +90,15 @@ class HomeFragment : Fragment() {
                 val snackbar = Snackbar.make(view, getString(R.string.failed_load_data_api),
                     Snackbar.LENGTH_LONG).setAction("OK", null)
                 val snackbarView = snackbar.view
-                val textView =
-                    snackbarView.findViewById(com.google.android.material.R.id.snackbar_text) as TextView
+                val textView: TextView =
+                    snackbarView.findViewById(com.google.android.material.R.id.snackbar_text)
                 textView.setTextColor(Color.BLACK)
                 snackbar.show()
             }
         })
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         requireActivity().menuInflater.inflate(R.menu.main_menu, menu)
         val searchManager = requireActivity().getSystemService(AppCompatActivity.SEARCH_SERVICE) as SearchManager
@@ -121,6 +123,7 @@ class HomeFragment : Fragment() {
 //        return true
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         return if (id == R.id.action_search) {

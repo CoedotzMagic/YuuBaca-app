@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import id.standherealone.yuubaca.databinding.FragmentCategoryBinding
 
-
+@Suppress("DEPRECATION")
 class CategoryFragment : Fragment() {
 
     private lateinit var binding: FragmentCategoryBinding

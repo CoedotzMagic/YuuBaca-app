@@ -1,7 +1,6 @@
 package id.standherealone.yuubaca.ui.setting
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,9 @@ import id.standherealone.yuubaca.BuildConfig
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.databinding.FragmentSettingBinding
 import id.standherealone.yuubaca.ui.feedback.EasyFeedback
+import androidx.core.net.toUri
 
+@Suppress("DEPRECATION")
 class SettingFragment : Fragment() {
 
     private lateinit var binding: FragmentSettingBinding
@@ -36,7 +37,7 @@ class SettingFragment : Fragment() {
             requireActivity().startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://luckytruedev.com/privacy_policy.html")
+                    "https://coedotzmagic.com/privacy_policy".toUri()
                 )
             )
         }
@@ -53,7 +54,7 @@ class SettingFragment : Fragment() {
             requireActivity().startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("http://play.google.com/store/apps/details?id=" + requireActivity().packageName)
+                    ("http://play.google.com/store/apps/details?id=" + requireActivity().packageName).toUri()
                 )
             )
         }
@@ -62,7 +63,7 @@ class SettingFragment : Fragment() {
             requireActivity().startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("http://play.google.com/store/apps/details?id=" + requireActivity().packageName)
+                    ("http://play.google.com/store/apps/details?id=" + requireActivity().packageName).toUri()
                 )
             )
         }
@@ -71,7 +72,7 @@ class SettingFragment : Fragment() {
             requireActivity().startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://github.com/luckytruedev/YuuBaca-app")
+                    "https://github.com/CoedotzMagic/YuuBaca-app".toUri()
                 )
             )
         }
@@ -80,7 +81,7 @@ class SettingFragment : Fragment() {
 
         binding.btnReport.setOnClickListener {
             EasyFeedback.Builder(requireContext())
-                .withEmail("luckytrue4dev@gmail.com, apps@luckytruedev.com")
+                .withEmail("reporter@coedotzmagic.com")
                 .withSystemInfo()
                 .build()
                 .start()
