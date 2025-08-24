@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.os.Build
 import java.util.*
+import kotlin.math.sqrt
 
 object DeviceInfo {
     fun getAllDeviceInfo(context: Context, fromDialog: Boolean): String {
@@ -54,9 +55,7 @@ object DeviceInfo {
                 Device.DEVICE_LANGUAGE -> return Locale.getDefault().displayLanguage
                 Device.DEVICE_TIME_ZONE -> return TimeZone.getDefault().id //(false, TimeZone.SHORT);
                 Device.DEVICE_TOTAL_MEMORY -> {
-                    return if (Build.VERSION.SDK_INT >= 16) getTotalMemory(activity).toString() else getFreeMemory(
-                        activity
-                    ).toString()
+                    return getTotalMemory(activity).toString()
                 }
                 Device.DEVICE_FREE_MEMORY -> return getFreeMemory(activity).toString()
                 Device.DEVICE_SYSTEM_VERSION -> return deviceName
@@ -137,18 +136,18 @@ object DeviceInfo {
             // int height = displayMetrics.heightPixels;
             val yInches = displayMetrics.heightPixels / displayMetrics.ydpi
             val xInches = displayMetrics.widthPixels / displayMetrics.xdpi
-            val diagonalInches = Math.sqrt((xInches * xInches + yInches * yInches).toDouble())
+            val diagonalInches = sqrt((xInches * xInches + yInches * yInches).toDouble())
             // 5inch device or bigger
             // smaller device
             diagonalInches >= 7
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             false
         }
     }
 
-    fun getAppVersion(context: Context): String {
-        var pInfo: PackageInfo? = null
-        var version = " "
+    fun getAppVersion(context: Context): String? {
+        var pInfo: PackageInfo?
+        var version: String? = " "
         try {
             pInfo = context.packageManager.getPackageInfo(context.packageName, 0)
             version = pInfo.versionName
