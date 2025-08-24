@@ -1,7 +1,6 @@
 package id.standherealone.yuubaca
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.Window
@@ -19,7 +18,9 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import id.standherealone.yuubaca.databinding.ActivityLoginBinding
+import androidx.core.net.toUri
 
+@Suppress("DEPRECATION")
 class LoginActivity: AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -70,7 +71,7 @@ class LoginActivity: AppCompatActivity() {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://luckytruedev.com/privacy_policy.html")
+                    "https://luckytruedev.com/privacy_policy.html".toUri()
                 )
             )
         }

@@ -5,6 +5,7 @@ import android.content.DialogInterface
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @Suppress("DEPRECATION")
     lateinit var mGoogleSignInClient: GoogleSignInClient
 
 //    private val auth by lazy {
@@ -35,11 +37,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        @Suppress("DEPRECATION")
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id)) //ini emang aman kok walaupun merah
             .requestEmail()
             .build()
 
+        @Suppress("DEPRECATION")
         mGoogleSignInClient= GoogleSignIn.getClient(this,gso)
 
         FirebaseAuth.getInstance()
@@ -80,8 +84,12 @@ class MainActivity : AppCompatActivity() {
 //            .apply()
 
         // OneSignal Initialization
-        OneSignal.initWithContext(this)
-        OneSignal.setAppId("3d588d2a-95be-4345-9b1c-bbfc4f44b69d")
+//        OneSignal.initWithContext(this)
+//        OneSignal.setAppId("3d588d2a-95be-4345-9b1c-bbfc4f44b69d")
+
+        onBackPressedDispatcher.addCallback(this) {
+            doExitApp()
+        }
 
     }
 
@@ -100,9 +108,5 @@ class MainActivity : AppCompatActivity() {
         } else {
             finish()
         }
-    }
-
-    override fun onBackPressed() {
-        doExitApp()
     }
 }
