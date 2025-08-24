@@ -14,8 +14,8 @@ android {
         applicationId = "id.standherealone.yuubaca"
         minSdk = 24
         targetSdk = 36
-        versionCode = 4
-        versionName = "1.2"
+        versionCode = 5
+        versionName = "2.0"
         multiDexEnabled = true
 
         manifestPlaceholders.putAll(
