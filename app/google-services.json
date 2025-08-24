@@ -1,8 +1,9 @@
 {
   "project_info": {
     "project_number": "455430537663",
+    "firebase_url": "https://yuubaca-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "yuubaca",
-    "storage_bucket": "yuubaca.appspot.com"
+    "storage_bucket": "yuubaca.firebasestorage.app"
   },
   "client": [
     {
@@ -19,6 +20,14 @@
           "android_info": {
             "package_name": "id.standherealone.yuubaca",
             "certificate_hash": "5a371ead24b5c02ae04e807e208bb26937ebaa20"
+          }
+        },
+        {
+          "client_id": "455430537663-a7c322v42nqudrqof0r9b6vom2dghm9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.standherealone.yuubaca",
+            "certificate_hash": "a5dfe679ad7ceae521ff4a88eb17e67f9cafff54"
           }
         },
         {
