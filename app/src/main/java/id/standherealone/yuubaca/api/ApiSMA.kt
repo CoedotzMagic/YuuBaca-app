@@ -13,7 +13,7 @@ interface ApiSMA {
 
     companion object {
 
-        var BASE_URL = "https://proyek.luckytruedev.com/yuubaca/public/api/"
+        var BASE_URL = "https://stuff.coedotzmagic.com/yuubaca/public/api/"
 
         fun create() : ApiSMA {
 
