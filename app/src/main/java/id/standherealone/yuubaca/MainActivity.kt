@@ -32,9 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         val firebaseUser = FirebaseAuth.getInstance().currentUser
 
-        if (firebaseUser != null) {
-            Toast.makeText(this, "Hello " + firebaseUser.displayName, Toast.LENGTH_SHORT).show()
-        } else {
+        if (firebaseUser == null) {
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
