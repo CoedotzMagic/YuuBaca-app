@@ -15,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import id.standherealone.yuubaca.databinding.ActivityMainBinding
 import java.util.*
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         // if app detection no connection network
         if (!isConnect()) {
-            AlertDialog.Builder(this)
+            MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.cek_jaringan)
                 .setMessage(R.string.isi_tidakkoneksi)
                 .setCancelable(false)

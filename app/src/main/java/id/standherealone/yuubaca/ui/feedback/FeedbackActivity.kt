@@ -33,6 +33,7 @@ import java.io.File
 import java.io.FileWriter
 import java.io.IOException
 import androidx.core.net.toUri
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
@@ -83,7 +84,8 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
                 SpannableString(resources.getString(R.string.info_fedback_legal_system_info))
             deviceInfo.setSpan(object : ClickableSpan() {
                 override fun onClick(widget: View) {
-                    AlertDialog.Builder(this@FeedbackActivity)
+
+                    MaterialAlertDialogBuilder(this@FeedbackActivity)
                         .setTitle(R.string.info_fedback_legal_system_info)
                         .setMessage(this@FeedbackActivity.deviceInfo)
                         .setPositiveButton(R.string.Ok) { dialog, which -> dialog.dismiss() }
@@ -95,7 +97,7 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
                 SpannableString(resources.getString(R.string.info_fedback_legal_log_data))
             systemLog.setSpan(object : ClickableSpan() {
                 override fun onClick(widget: View) {
-                    AlertDialog.Builder(this@FeedbackActivity)
+                    MaterialAlertDialogBuilder(this@FeedbackActivity)
                         .setTitle(R.string.info_fedback_legal_log_data)
                         .setMessage(LOG_TO_STRING)
                         .setPositiveButton(R.string.Ok) { dialog, which -> dialog.dismiss() }
@@ -148,7 +150,7 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun showMessageOKCancel(message: String, okListener: DialogInterface.OnClickListener) {
-        AlertDialog.Builder(this)
+        MaterialAlertDialogBuilder(this)
             .setMessage(message)
             .setPositiveButton(R.string.Ok, okListener)
             .setNegativeButton(R.string.cancel, null)

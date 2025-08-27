@@ -12,6 +12,7 @@ import com.mindev.mindev_pdfviewer.PdfScope
 import id.standherealone.yuubaca.R
 import id.standherealone.yuubaca.databinding.ActivityBacaBinding
 import androidx.core.content.edit
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class BacaActivity : AppCompatActivity() {
 
@@ -44,7 +45,7 @@ class BacaActivity : AppCompatActivity() {
         // first run for attention
         val firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrunbuku", true)
         if (firstrun) {
-            AlertDialog.Builder(this)
+            MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.title_baca_firstrun)
                 .setMessage(R.string.isi_baca_firstrun)
                 .setCancelable(false)
