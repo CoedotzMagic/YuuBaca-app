@@ -50,6 +50,7 @@ android {
             )
             multiDexEnabled = true
         }
+        // Keystore : YuuBaca / yuubacaapp - hahahihi
     }
 
     compileOptions {
