@@ -87,12 +87,18 @@ dependencies {
     // Google & Firebase
     implementation(platform("com.google.firebase:firebase-bom:34.1.0"))
     implementation("com.google.firebase:firebase-analytics-ktx:22.5.0")
-    implementation("com.google.firebase:firebase-auth-ktx:23.2.1")
-    implementation("com.google.firebase:firebase-auth:24.0.1")
     implementation("com.google.firebase:firebase-crashlytics-ktx:19.4.4")
     implementation("com.google.firebase:firebase-config-ktx:22.1.2")
     implementation("com.google.firebase:firebase-perf-ktx:21.0.5")
+
+    // Auth
+    implementation("com.google.firebase:firebase-auth-ktx:23.2.1")
+    implementation("com.google.firebase:firebase-auth:24.0.1")
     implementation("com.google.android.gms:play-services-auth:21.4.0")
+    implementation("androidx.credentials:credentials:1.5.0")
+    implementation("androidx.credentials:credentials-play-services-auth:1.5.0")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+
 
     // Retrofit & Picasso
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
